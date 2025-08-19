@@ -1,0 +1,21 @@
+utsavdotdev:
+  name: Utsav Bhattarai
+  title: Full stack JS Developer
+  url: https://github.com/utsavdotdev
+  image_url: https://github.com/utsavdotdev.png
+  page: true
+  socials:
+    x: utsavdotdev
+    github: utsavdotdev
+
+MrBashyal:
+  name: Prarambha Bashyal
+  title: NextEra Development Founder
+  url: https://github.com/prarambha369
+  image_url: https://github.com/prarambha369.png
+  page: true
+  socials:
+    x: MisterBashyal
+    github: Prarambha369
+    linkedin: MisterBashyal
+    stackoverflow: 30064140
