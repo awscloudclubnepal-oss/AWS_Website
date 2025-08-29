@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Share2 } from "lucide-react";
 import { Clock , MapPin , Calendar , Users } from "lucide-react";
-import {  motion } from "motion/react";
 interface TimeLeft {
   days: number;
   hours: number;
@@ -13,7 +12,7 @@ interface TimeLeft {
 }
 
 export function Countdown() {
-// 10 = > Novemver  , 27 -> november 15 and rest last three are the hour , minutes and second clock  
+    // 2025 , 10 (index of month),15(day),H, M ,s
 const eventdate = new Date (2025,10,15,10,0,0)
 const eventInformation = {
     venue:" Advance College of Engineering & Management",
@@ -23,7 +22,6 @@ const eventInformation = {
     },
     capacity:"1500"
 }
-const venue = " Advance College of Engineering & Management"
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -163,7 +161,7 @@ const venue = " Advance College of Engineering & Management"
                 <Clock className="w-8 h-8 text-accent mr-3" />
                 <div>
                   <h3 className="font-semibold text-card-foreground">Time</h3>
-                  <p className="text-muted-foreground">00:00 AM to 00:00 PM </p>
+                  <p className="text-muted-foreground">{eventInformation.time.from} AM to {eventInformation.time.to} PM </p>
                 </div>
               </div>
             </CardContent>
@@ -178,7 +176,7 @@ const venue = " Advance College of Engineering & Management"
                     Location
                   </h3>
                   <p className="text-muted-foreground">
-                    {venue}
+                    {eventInformation.venue}
                   </p>
                 </div>
               </div>
@@ -193,7 +191,7 @@ const venue = " Advance College of Engineering & Management"
                   <h3 className="font-semibold text-card-foreground">
                     Capacity
                   </h3>
-                  <p className="text-muted-foreground">2,500 Attendees</p>
+                  <p className="text-muted-foreground">{eventInformation.capacity}</p>
                 </div>
               </div>
             </CardContent>
