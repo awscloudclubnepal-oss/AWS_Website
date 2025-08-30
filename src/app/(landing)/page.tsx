@@ -5,7 +5,7 @@ import { Features } from "@/components/Features";
 import { HeroSection } from "@/components/Hero/Hero";
 import LogoClouds from "@/components/LogoCloud/LogoCloud";
 import { TestimonialSection } from "@/components/Testimonials";
-import Gallery from "@/components/Gallery/Gallery";
+import Gallery from "@/components/Gallery";
 
 function Page() {
   return (
