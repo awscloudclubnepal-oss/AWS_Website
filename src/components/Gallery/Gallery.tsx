@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "../ui/button";
 import { categories, galleryItems, type GalleryItem } from "@/data/gallery";
+import Image from "next/image";
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -174,10 +175,13 @@ const Gallery = () => {
                 >
                   ✕
                 </button>
-                <img
+                <Image
+                  key={selectedImageIndex}
                   src={selectedItem.images[selectedImageIndex]}
                   alt={`${selectedItem.title} - ${selectedImageIndex + 1}`}
                   className="w-full h-[56vh] object-contain bg-black"
+                  width={1200}
+                  height={675}
                 />
 
                 <button
@@ -203,7 +207,7 @@ const Gallery = () => {
                     className={`flex-shrink-0 w-20 h-14 rounded-md overflow-hidden border ${idx === selectedImageIndex ? 'ring-2 ring-primary' : 'opacity-70 hover:opacity-100'}`}
                     onClick={() => setSelectedImageIndex(idx)}
                   >
-                    <img src={img} alt={`thumb-${idx}`} className="w-full h-full object-cover" />
+                    <Image src={img} alt={`thumb-${idx}`} className="w-full h-full object-cover" width={160} height={90} />
                   </button>
                 ))}
               </div>
