@@ -1,79 +1,243 @@
 "use client";
-import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "../ui/carousel";
-
-// Example images, replace with your own or pass as props
-const images = [
-  "/gallery_assests/Aws advance/Advance_1.JPG",
-  "/gallery_assests/Aws advance/Advance_2.JPG",
-  "/gallery_assests/Aws advance/Advance_3.JPG",
-  "/gallery_assests/Aws advance/Advance_4.JPG",
-  "/gallery_assests/Aws advance/Advance_5.JPG",
-  "/gallery_assests/Aws advance/AWS_Advance_front.JPG",
-  "/gallery_assests/AWS_SCD_2024/SCD_1.jpg",
-  "/gallery_assests/AWS_SCD_2024/SCD_2.jpg",
-  "/gallery_assests/AWS_SCD_2024/SCD_Front.jpg",
-  "/gallery_assests/Meetups/Meetup_1.jpg",
-  "/gallery_assests/Meetups/Meetup_2.jpg",
-  "/gallery_assests/Meetups/Meetup_3.jpg",
-  "/gallery_assests/Meetups/Meetup_front.jpg",
-  "/gallery_assests/Meetups/Meetup_sample_image.jpg",
-  "/gallery_assests/Upcoming/Upcoming_front.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KEC/KEC_1.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KEC/KEC_2.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KEC/KEC_3.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KEC/KEC_front.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KhEC/KhEC_1.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KhEC/KhEC_2.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KhEC/KhEC_3.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KhEC/KhEC_4.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KhEC/KhEC_front.jpg",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KMC/KMC_1.JPG",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KMC/KMC_2.JPG",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KMC/KMC_3.JPG",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KMC/KMC_4.JPG",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KMC/KMC_5.JPG",
-  "/gallery_assests/Workshops/Aws_Fundamentals/KMC/KMC_Front.JPG",
-];
+import React, { useState, useRef, useEffect } from "react";
+import { Button } from "../ui/button";
+import { categories, galleryItems, type GalleryItem } from "@/data/gallery";
 
 const Gallery = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+  // Modal / image viewer state
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  
+
+  // Filter gallery items based on active category
+  const filteredItems = activeCategory === "all" 
+    ? galleryItems 
+    : galleryItems.filter(item => item.category === activeCategory);
+
+  // For navigation buttons
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  // Scroll handler
+  const updateNav = () => {
+    const el = galleryRef.current;
+    if (!el) return;
+    setAtStart(el.scrollLeft <= 0);
+    setAtEnd(el.scrollLeft + el.offsetWidth >= el.scrollWidth - 2);
+  };
+
+  useEffect(() => {
+    updateNav();
+    const el = galleryRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", updateNav);
+    return () => el.removeEventListener("scroll", updateNav);
+  }, [filteredItems]);
+
+  const scrollLeft = () => {
+    const el = galleryRef.current;
+    if (!el) return;
+    el.scrollBy({ left: -340, behavior: "smooth" });
+  };
+  const scrollRight = () => {
+    const el = galleryRef.current;
+    if (!el) return;
+    el.scrollBy({ left: 340, behavior: "smooth" });
+  };
+
+  // Open modal for an item
+  const openGallery = (item: GalleryItem, startIndex = 0) => {
+    setSelectedItem(item);
+    setSelectedImageIndex(startIndex);
+    setOpenModal(true);
+  };
+
+  const closeModal = () => {
+    setOpenModal(false);
+    setSelectedItem(null);
+    setSelectedImageIndex(0);
+  };
+
+  const navigateModalImage = (dir: "left" | "right") => {
+    if (!selectedItem) return;
+    setSelectedImageIndex((prev) => {
+      if (dir === "left") return prev === 0 ? selectedItem.images.length - 1 : prev - 1;
+      return prev === selectedItem.images.length - 1 ? 0 : prev + 1;
+    });
+  };
+
+  // Keyboard handlers for modal
+  useEffect(() => {
+    if (!openModal) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowLeft") navigateModalImage("left");
+      if (e.key === "ArrowRight") navigateModalImage("right");
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [openModal, selectedItem]);
+
+  // Prevent body scroll when modal open
+  useEffect(() => {
+    if (openModal) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => { document.body.style.overflow = prev; };
+    }
+  }, [openModal]);
+
   return (
-    <section className="w-full max-w-5xl mx-auto py-8 px-2">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Gallery</h2>
+    <section className="w-full max-w-7xl mx-auto py-8 px-4 md:px-6">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-left">Gallery</h2>
+
+      {/* Filter tabs */}
+      <div className="flex flex-wrap justify-start gap-2 mb-8">
+        {categories.map((category) => (
+          <Button
+            key={category.id}
+            onClick={() => setActiveCategory(category.id)}
+            variant={activeCategory === category.id ? "default" : "outline"}
+            className={`rounded-full text-xs md:text-sm px-4 py-2 font-semibold transition-all ${
+              activeCategory === category.id
+                ? "bg-black text-white dark:bg-white dark:text-black shadow-sm"
+                : "bg-white text-black dark:bg-black dark:text-white border border-gray-200 dark:border-gray-700"
+            }`}
+          >
+            {category.label}
+          </Button>
+        ))}
+      </div>
+
+      {/* Gallery container with navigation */}
       <div className="relative">
-        <Carousel
-          className="w-full"
-          opts={{ align: "start", loop: true }}
+        <div
+          className="flex overflow-x-auto gap-4 pb-6 px-1 no-scrollbar"
+          style={{ scrollSnapType: "x mandatory", scrollPaddingLeft: "1rem" }}
+          ref={galleryRef}
         >
-          <CarouselPrevious />
-          <CarouselContent className="gap-4">
-            {images.map((src, idx) => (
-              <CarouselItem
-                key={idx}
-                className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5"
-              >
-                <div className="aspect-[4/3] w-full h-full rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              className="flex-shrink-0 min-w-[320px] max-w-[340px] md:min-w-[340px] md:max-w-[360px] h-[340px] bg-white dark:bg-gray-900 rounded-xl shadow group transition-all duration-300 border border-gray-100 dark:border-gray-800 relative hover:min-w-[600px] hover:max-w-[640px] hover:z-10"
+              style={{ scrollSnapAlign: "start" }}
+            >
+              {/* Default (not hovered): image on top, info below. On hover: two columns */}
+              <div className="w-full h-full flex flex-col group-hover:flex-row transition-all duration-500">
+                {/* Image section */}
+                <div className="w-full h-[180px] group-hover:w-1/2 group-hover:h-full rounded-t-xl group-hover:rounded-l-xl group-hover:rounded-tr-none overflow-hidden transition-all duration-300">
                   <img
-                    src={src}
-                    alt={`Gallery image ${idx + 1}`}
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                    src={item.card}
+                    alt={item.title}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselNext />
-        </Carousel>
+                {/* Info section */}
+                <div className="flex flex-col justify-between h-[calc(100%-180px)] group-hover:h-full p-4 w-full group-hover:w-1/2 transition-all duration-300">
+                  <div>
+                    <h3 className="font-semibold text-base md:text-lg mb-1 line-clamp-1">{item.title}</h3>
+                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 line-clamp-2 group-hover:line-clamp-none transition-all duration-200">{item.description}</p>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => openGallery(item)}
+                      className="text-xs md:text-sm font-medium text-blue-600 hover:underline flex items-center gap-1"
+                    >
+                      View Gallery ({item.images.length} image{item.images.length > 1 ? 's' : ''})
+                      <span aria-hidden className="ml-1">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* Modal Image Viewer */}
+        {openModal && selectedItem && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+            onClick={(e) => { if (e.target === e.currentTarget) closeModal(); }}
+          >
+            <div className="bg-white dark:bg-gray-900 rounded-lg max-w-4xl w-full shadow-lg overflow-hidden">
+              <div className="relative">
+                <button
+                  aria-label="Close"
+                  className="absolute right-2 top-2 z-20 bg-white/80 dark:bg-gray-800/80 rounded-md p-1"
+                  onClick={closeModal}
+                >
+                  ✕
+                </button>
+                <img
+                  src={selectedItem.images[selectedImageIndex]}
+                  alt={`${selectedItem.title} - ${selectedImageIndex + 1}`}
+                  className="w-full h-[56vh] object-contain bg-black"
+                />
+
+                <button
+                  aria-label="Previous image"
+                  onClick={() => navigateModalImage("left")}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 rounded-full p-2"
+                >
+                  ←
+                </button>
+                <button
+                  aria-label="Next image"
+                  onClick={() => navigateModalImage("right")}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 rounded-full p-2"
+                >
+                  →
+                </button>
+              </div>
+              {/* Thumbnails */}
+              <div className="flex gap-2 p-3 overflow-x-auto bg-card">
+                {selectedItem.images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    className={`flex-shrink-0 w-20 h-14 rounded-md overflow-hidden border ${idx === selectedImageIndex ? 'ring-2 ring-primary' : 'opacity-70 hover:opacity-100'}`}
+                    onClick={() => setSelectedImageIndex(idx)}
+                  >
+                    <img src={img} alt={`thumb-${idx}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+        {/* Navigation buttons */}
+        <div className="absolute bottom-2 right-2 flex gap-2 z-20">
+          <button
+            type="button"
+            aria-label="Scroll left"
+            className=" bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition disabled:opacity-50"
+            onClick={scrollLeft}
+            disabled={atStart}
+          >
+            <span aria-hidden>←</span>
+          </button>
+          <button
+            type="button"
+            aria-label="Scroll right"
+            className="bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition disabled:opacity-50"
+            onClick={scrollRight}
+            disabled={atEnd}
+          >
+            <span aria-hidden>→</span>
+          </button>
+        </div>
       </div>
+      {/* Hide scrollbar for all browsers */}
+      <style jsx>{`
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      `}</style>
     </section>
   );
-};
-
+}
 export default Gallery;
