@@ -35,7 +35,11 @@ const Gallery = () => {
     const el = galleryRef.current;
     if (!el) return;
     el.addEventListener("scroll", updateNav);
-    return () => el.removeEventListener("scroll", updateNav);
+    window.addEventListener("resize", updateNav);
+    return () => {
+      el.removeEventListener("scroll", updateNav);
+      window.removeEventListener("resize", updateNav);
+    };
   }, [filteredItems]);
 
   const scrollLeft = () => {
@@ -116,47 +120,49 @@ const Gallery = () => {
       {/* Gallery container with navigation */}
       <div className="relative">
         <div
-          className="flex overflow-x-auto gap-4 pb-6 px-1 no-scrollbar"
-          style={{ scrollSnapType: "x mandatory", scrollPaddingLeft: "1rem" }}
           ref={galleryRef}
+          className="w-full max-w-full overflow-x-auto overflow-y-hidden -mx-4 px-4 md:px-0 py-2 no-scrollbar"
+          style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
         >
-          {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              className="flex-shrink-0 min-w-[320px] max-w-[340px] md:min-w-[340px] md:max-w-[360px] h-[340px] bg-white dark:bg-gray-900 rounded-xl shadow group transition-all duration-300 border border-gray-100 dark:border-gray-800 relative hover:min-w-[600px] hover:max-w-[640px] hover:z-10"
-              style={{ scrollSnapAlign: "start" }}
-            >
-              {/* Default (not hovered): image on top, info below. On hover: two columns */}
-              <div className="w-full h-full flex flex-col group-hover:flex-row transition-all duration-500">
-                {/* Image section */}
-                <div className="w-full h-[180px] group-hover:w-1/2 group-hover:h-full rounded-t-xl group-hover:rounded-l-xl group-hover:rounded-tr-none overflow-hidden transition-all duration-300">
-                  <img
-                    src={item.card}
-                    alt={item.title}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </div>
-                {/* Info section */}
-                <div className="flex flex-col justify-between h-[calc(100%-180px)] group-hover:h-full p-4 w-full group-hover:w-1/2 transition-all duration-300">
-                  <div>
-                    <h3 className="font-semibold text-base md:text-lg mb-1 line-clamp-1">{item.title}</h3>
-                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 line-clamp-2 group-hover:line-clamp-none transition-all duration-200">{item.description}</p>
+          <div className="flex gap-4" style={{ minWidth: "100%", paddingLeft: '1rem' }}>
+            {filteredItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex-shrink-0 min-w-[320px] max-w-[340px] md:min-w-[340px] md:max-w-[360px] h-[340px] bg-white dark:bg-gray-900 rounded-xl shadow group transition-all duration-300 border border-gray-100 dark:border-gray-800 relative md:hover:min-w-[600px] md:hover:max-w-[640px] md:hover:z-10"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                {/* Default (not hovered): image on top, info below. On hover: two columns */}
+                <div className="w-full h-full flex flex-col md:group-hover:flex-row transition-all duration-500">
+                  {/* Image section */}
+                  <div className="w-full h-[180px] md:group-hover:w-1/2 md:group-hover:h-full rounded-t-xl md:group-hover:rounded-l-xl md:group-hover:rounded-tr-none overflow-hidden transition-all duration-300">
+                    <img
+                      src={item.card}
+                      alt={item.title}
+                      className="object-cover w-full h-full md:group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
                   </div>
-                  <div className="mt-2 flex items-center justify-between">
-                    <button
-                      type="button"
-                      onClick={() => openGallery(item)}
-                      className="text-xs md:text-sm font-medium text-blue-600 hover:underline flex items-center gap-1"
-                    >
-                      View Gallery ({item.images.length} image{item.images.length > 1 ? 's' : ''})
-                      <span aria-hidden className="ml-1">→</span>
-                    </button>
+                  {/* Info section */}
+                  <div className="flex flex-col justify-between h-[calc(100%-180px)] md:group-hover:h-full p-4 w-full md:group-hover:w-1/2 transition-all duration-300">
+                    <div>
+                      <h3 className="font-semibold text-base md:text-lg mb-1 line-clamp-1">{item.title}</h3>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 line-clamp-2 md:group-hover:line-clamp-none transition-all duration-200">{item.description}</p>
+                    </div>
+                    <div className="mt-2 flex items-center justify-between">
+                      <button
+                        type="button"
+                        onClick={() => openGallery(item)}
+                        className="text-xs md:text-sm font-medium text-blue-600 hover:underline flex items-center gap-1"
+                      >
+                        View Gallery ({item.images.length} image{item.images.length > 1 ? 's' : ''})
+                        <span aria-hidden className="ml-1">→</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         {/* Modal Image Viewer */}
         {openModal && selectedItem && (
