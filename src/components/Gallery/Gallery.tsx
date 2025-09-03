@@ -12,7 +12,7 @@ import {
 } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-const Gallery = () => {
+export function Gallery(){
   const [activeCategory, setActiveCategory] = useState("all");
   // Modal / image viewer state
   const [openModal, setOpenModal] = useState(false);
@@ -312,4 +312,4 @@ const Gallery = () => {
     </section>
   );
 }
-export default Gallery;
+
