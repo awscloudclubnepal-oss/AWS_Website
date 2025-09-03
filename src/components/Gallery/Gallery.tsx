@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Button } from "../ui/button";
 import { categories, galleryItems, type GalleryItem } from "@/data/gallery";
 import Image from "next/image";
+
 import {
   Carousel,
   CarouselContent,
@@ -13,6 +14,8 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 export function Gallery(){
+
+
   const [activeCategory, setActiveCategory] = useState("all");
   // Modal / image viewer state
   const [openModal, setOpenModal] = useState(false);
@@ -226,6 +229,7 @@ export function Gallery(){
           ))}
         </div>
         {/* Navigation buttons below cards at bottom right */}
+
         <div className="flex justify-end mt-4 pr-8">
           <button
             type="button"
@@ -247,7 +251,6 @@ export function Gallery(){
           </button>
         </div>
       </div>
-
       {/* Modal Image Viewer */}
       {openModal && selectedItem && (
         <div
@@ -273,7 +276,6 @@ export function Gallery(){
                 width={1200}
                 height={675}
               />
-
               <button
                 aria-label="Previous image"
                 onClick={() => navigateModalImage("left")}
@@ -312,4 +314,4 @@ export function Gallery(){
     </section>
   );
 }
-
+export default Gallery;
