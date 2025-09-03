@@ -20,14 +20,14 @@ export default function Team() {
     }, [selected]);
 
     return (
-        <section id="teams" className="px-6 py-16 md:py-32 space-y-12">
+        <section id="teams" className="px-4 sm:px-6 py-12 sm:py-16 md:py-28 lg:py-32 space-y-8 sm:space-y-10 md:space-y-12">
             <div className="text-center">
-                <h2 className="text-3xl font-bold">Meet Our Team</h2>
-                <p className="mt-4 text-lg">Discover the talented individuals behind our success.</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Meet Our Team</h2>
+                <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground">Discover the talented individuals behind our success.</p>
             </div>
             <Filter selected={selected} setSelected={setSelected} />
             <div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto">
                     <AnimatePresence>
                         {filteredMembers.map((member) => (
                             <motion.div
