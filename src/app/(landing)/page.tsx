@@ -9,7 +9,7 @@ import PresidentReview from "@/components/Review/President";
 import { TestimonialSection } from "@/components/Testimonials";
 import { ContributorsSection } from "@/components/Contributors";
 import { EventsSection } from "@/components/Events";
-import { Gallery } from "@/components/Gallery";
+import   Gallery   from "@/components/Gallery/Gallery";
 
 function Page() {
   return (
