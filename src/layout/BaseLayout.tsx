@@ -5,11 +5,13 @@ import React from "react";
 
 function BaseLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      {children}
+      <main className="flex-1">
+        {children}
+      </main>
       <FooterSection />
-    </>
+    </div>
   );
 }
 

@@ -24,10 +24,10 @@ export const Navbar = () => {
       >
         <div
           className={cn(
-            "mx-auto max-w-7xl px-6 transition-all duration-300 lg:px-12 rounded-2xl"
+            "mx-auto w-full px-4 sm:px-6 lg:px-12 transition-all duration-300 rounded-2xl"
           )}
         >
-          <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0">
+          <div className="relative flex flex-wrap items-center justify-between gap-4 sm:gap-6 lg:gap-0">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
                 href="/"
@@ -36,8 +36,9 @@ export const Navbar = () => {
               >
                 <Image
                   src="/logo.png"
-                  width={70}
-                  height={40}
+                  width={60}
+                  height={35}
+                  className="w-[50px] h-[30px] sm:w-[70px] sm:h-[40px] object-contain"
                   alt="logo"
                   decoding="async"
                   loading="lazy"

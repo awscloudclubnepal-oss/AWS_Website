@@ -21,9 +21,9 @@ const links = [
 
 export function FooterSection() {
   return (
-    <footer className="py-16 md:py-28 border-t">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+    <footer className="py-12 sm:py-16 md:py-24 lg:py-28 border-t">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="my-6 sm:my-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm">
           {links.map((link, index) => (
             <Link
               key={index}
@@ -34,7 +34,7 @@ export function FooterSection() {
             </Link>
           ))}
         </div>
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+        <div className="my-6 sm:my-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm">
           <Link
             href="#"
             target="_blank"
@@ -43,7 +43,7 @@ export function FooterSection() {
             className="text-muted-foreground hover:text-primary block"
           >
             <svg
-              className="size-6"
+              className="size-5 sm:size-6"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -161,7 +161,7 @@ export function FooterSection() {
             </svg>
           </Link>
         </div>
-        <span className="text-muted-foreground block text-center text-sm">
+        <span className="text-muted-foreground block text-center text-xs sm:text-sm">
           {" "}
           © {new Date().getFullYear()} AWS CLUB NEPAL, All rights reserved
         </span>
