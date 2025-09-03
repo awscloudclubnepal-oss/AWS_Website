@@ -104,7 +104,7 @@ const Gallery = () => {
   }, [openModal]);
 
   const autoplayRef = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: true })
   );
 
   return (
@@ -183,17 +183,8 @@ const Gallery = () => {
           <CarouselNext className="hidden sm:flex" />
         </Carousel>
       </div>
-      {/* Desktop: Flex row with push-away hover and navigation buttons */}
-      <div className="hidden md:relative md:block">
-        <button
-          type="button"
-          aria-label="Scroll left"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full p-2 shadow hover:bg-gray-100 dark:hover:bg-gray-700 transition md:flex hidden"
-          onClick={scrollLeft}
-          style={{marginLeft: '-24px'}}
-        >
-          &#8592;
-        </button>
+      {/* Desktop: Flex row with push-away hover and navigation buttons below cards at bottom right */}
+      <div className="hidden md:flex md:flex-col md:relative">
         <div
           className="flex gap-1 overflow-x-auto no-scrollbar px-8"
           ref={galleryRef}
@@ -234,15 +225,27 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-        <button
-          type="button"
-          aria-label="Scroll right"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full p-2 shadow hover:bg-gray-100 dark:hover:bg-gray-700 transition md:flex hidden"
-          onClick={scrollRight}
-          style={{marginRight: '-24px'}}
-        >
-          &#8594;
-        </button>
+        {/* Navigation buttons below cards at bottom right */}
+        <div className="flex justify-end mt-4 pr-8">
+          <button
+            type="button"
+            aria-label="Scroll left"
+            className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full p-2 shadow hover:bg-gray-100 dark:hover:bg-gray-700 transition md:flex hidden"
+            onClick={scrollLeft}
+            disabled={atStart}
+          >
+            &#8592;
+          </button>
+          <button
+            type="button"
+            aria-label="Scroll right"
+            className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full p-2 shadow hover:bg-gray-100 dark:hover:bg-gray-700 transition md:flex hidden ml-2"
+            onClick={scrollRight}
+            disabled={atEnd}
+          >
+            &#8594;
+          </button>
+        </div>
       </div>
 
       {/* Modal Image Viewer */}
