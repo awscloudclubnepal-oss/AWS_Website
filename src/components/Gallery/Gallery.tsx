@@ -129,60 +129,121 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Responsive Carousel Gallery */}
-      <Carousel
-        className="w-full"
-        plugins={[autoplayRef.current]}
-        onMouseEnter={autoplayRef.current.stop}
-        onMouseLeave={autoplayRef.current.reset}
-      >
-        <CarouselContent>
-          {filteredItems.map((item) => (
-            <CarouselItem
-              key={item.id}
-              className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3"
-            >
-              <div className="p-1">
-                {/* Card content */}
-                <div
-                  className="flex-shrink-0 w-full h-[340px] bg-white dark:bg-gray-900 rounded-xl shadow group transition-all duration-300 border border-gray-100 dark:border-gray-800 relative md:hover:w-[600px] md:hover:max-w-[640px] md:hover:z-10"
-                >
-                  <div className="w-full h-full flex flex-col md:group-hover:flex-row transition-all duration-500">
-                    {/* Image section */}
-                    <div className="w-full h-[180px] md:group-hover:w-1/2 md:group-hover:h-full rounded-t-xl md:group-hover:rounded-l-xl md:group-hover:rounded-tr-none overflow-hidden transition-all duration-300">
-                      <img
-                        src={item.card}
-                        alt={item.title}
-                        className="object-cover w-full h-full md:group-hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
-                      />
-                    </div>
-                    {/* Info section */}
-                    <div className="flex flex-col justify-between h-[calc(100%-180px)] md:group-hover:h-full p-4 w-full md:group-hover:w-1/2 transition-all duration-300">
-                      <div>
-                        <h3 className="font-semibold text-base md:text-lg mb-1 line-clamp-1">{item.title}</h3>
-                        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 line-clamp-2 md:group-hover:line-clamp-none transition-all duration-200">{item.description}</p>
+      {/* Responsive Gallery: Carousel on mobile, Flex row on desktop */}
+      {/* Mobile: Carousel */}
+      <div className="block md:hidden">
+        <Carousel
+          className="w-full"
+          plugins={[autoplayRef.current]}
+          onMouseEnter={autoplayRef.current.stop}
+          onMouseLeave={autoplayRef.current.reset}
+        >
+          <CarouselContent>
+            {filteredItems.map((item) => (
+              <CarouselItem
+                key={item.id}
+                className="pl-1 basis-full"
+              >
+                <div className="p-1">
+                  <div
+                    className="flex-shrink-0 w-full h-[340px] bg-white dark:bg-gray-900 rounded-xl shadow group transition-all duration-300 border border-gray-100 dark:border-gray-800 relative"
+                  >
+                    <div className="w-full h-full flex flex-col transition-all duration-500">
+                      <div className="w-full h-[180px] rounded-t-xl overflow-hidden transition-all duration-300">
+                        <img
+                          src={item.card}
+                          alt={item.title}
+                          className="object-cover w-full h-full transition-transform duration-300"
+                          loading="lazy"
+                        />
                       </div>
-                      <div className="mt-2 flex items-center justify-between">
-                        <button
-                          type="button"
-                          onClick={() => openGallery(item)}
-                          className="text-xs md:text-sm font-medium text-blue-600 hover:underline flex items-center gap-1"
-                        >
-                          View Gallery ({item.images.length} image{item.images.length > 1 ? 's' : ''})
-                          <span aria-hidden className="ml-1">→</span>
-                        </button>
+                      <div className="flex flex-col justify-between h-[calc(100%-180px)] p-4 w-full transition-all duration-300">
+                        <div>
+                          <h3 className="font-semibold text-base md:text-lg mb-1 line-clamp-1">{item.title}</h3>
+                          <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 line-clamp-2 transition-all duration-200">{item.description}</p>
+                        </div>
+                        <div className="mt-2 flex items-center justify-between">
+                          <button
+                            type="button"
+                            onClick={() => openGallery(item)}
+                            className="text-xs md:text-sm font-medium text-blue-600 hover:underline flex items-center gap-1"
+                          >
+                            View Gallery ({item.images.length} image{item.images.length > 1 ? 's' : ''})
+                            <span aria-hidden className="ml-1">→</span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
+        </Carousel>
+      </div>
+      {/* Desktop: Flex row with push-away hover and navigation buttons */}
+      <div className="hidden md:relative md:block">
+        <button
+          type="button"
+          aria-label="Scroll left"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full p-2 shadow hover:bg-gray-100 dark:hover:bg-gray-700 transition md:flex hidden"
+          onClick={scrollLeft}
+          style={{marginLeft: '-24px'}}
+        >
+          &#8592;
+        </button>
+        <div
+          className="flex gap-1 overflow-x-auto no-scrollbar px-8"
+          ref={galleryRef}
+          style={{scrollBehavior: 'smooth'}}
+        >
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              className="transition-all duration-300 flex-shrink-0 w-[340px] hover:w-[600px] bg-white dark:bg-gray-900 rounded-xl shadow border border-gray-100 dark:border-gray-800 group relative overflow-hidden"
+              style={{ minHeight: 340 }}
+            >
+              <div className="w-full h-full flex flex-col md:group-hover:flex-row transition-all duration-500">
+                <div className="w-full h-[180px] md:group-hover:w-1/2 md:group-hover:h-full rounded-t-xl md:group-hover:rounded-l-xl md:group-hover:rounded-tr-none overflow-hidden transition-all duration-300">
+                  <img
+                    src={item.card}
+                    alt={item.title}
+                    className="object-cover w-full h-full md:group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="flex flex-col justify-between h-[calc(100%-180px)] md:group-hover:h-full p-4 w-full md:group-hover:w-1/2 transition-all duration-300">
+                  <div>
+                    <h3 className="font-semibold text-base md:text-lg mb-1 line-clamp-1">{item.title}</h3>
+                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 line-clamp-2 md:group-hover:line-clamp-none transition-all duration-200">{item.description}</p>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => openGallery(item)}
+                      className="text-xs md:text-sm font-medium text-blue-600 hover:underline flex items-center gap-1"
+                    >
+                      View Gallery ({item.images.length} image{item.images.length > 1 ? 's' : ''})
+                      <span aria-hidden className="ml-1">→</span>
+                    </button>
+                  </div>
+                </div>
               </div>
-            </CarouselItem>
+            </div>
           ))}
-        </CarouselContent>
-        <CarouselPrevious className="hidden sm:flex" />
-        <CarouselNext className="hidden sm:flex" />
-      </Carousel>
+        </div>
+        <button
+          type="button"
+          aria-label="Scroll right"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full p-2 shadow hover:bg-gray-100 dark:hover:bg-gray-700 transition md:flex hidden"
+          onClick={scrollRight}
+          style={{marginRight: '-24px'}}
+        >
+          &#8594;
+        </button>
+      </div>
 
       {/* Modal Image Viewer */}
       {openModal && selectedItem && (
