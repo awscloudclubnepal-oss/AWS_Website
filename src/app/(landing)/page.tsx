@@ -9,6 +9,7 @@ import PresidentReview from "@/components/Review/President";
 import { TestimonialSection } from "@/components/Testimonials";
 import { ContributorsSection } from "@/components/Contributors";
 import { EventsSection } from "@/components/Events";
+import { Gallery } from "@/components/Gallery";
 
 function Page() {
   return (
@@ -24,6 +25,7 @@ function Page() {
         <LogoClouds />
         <EventsSection />
         <Team />
+        <Gallery />
         <ContributorsSection />
         <PresidentReview />
         <FAQs />

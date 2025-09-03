@@ -3,6 +3,14 @@ import React, { useState, useRef, useEffect } from "react";
 import { Button } from "../ui/button";
 import { categories, galleryItems, type GalleryItem } from "@/data/gallery";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -95,6 +103,10 @@ const Gallery = () => {
     }
   }, [openModal]);
 
+  const autoplayRef = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
   return (
     <section className="w-full max-w-7xl mx-auto py-8 px-4 md:px-6">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-left">Gallery</h2>
@@ -117,130 +129,117 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Gallery container with navigation */}
-  <div className="relative overflow-x-clip">
-        <div
-          ref={galleryRef}
-      className="w-full max-w-full overflow-x-auto overflow-y-hidden px-4 md:px-0 py-2 no-scrollbar snap-x snap-mandatory min-w-0"
-          style={{ WebkitOverflowScrolling: "touch" }}
-        >
-      <div className="flex gap-4 pl-4 md:pl-0 min-w-0">
-            {filteredItems.map((item) => (
-              <div
-                key={item.id}
-        className="flex-shrink-0 min-w-[320px] max-w-[340px] md:min-w-[340px] md:max-w-[360px] h-[340px] bg-white dark:bg-gray-900 rounded-xl shadow group transition-all duration-300 border border-gray-100 dark:border-gray-800 relative md:hover:min-w-[600px] md:hover:max-w-[640px] md:hover:z-10 snap-start"
-              >
-                {/* Default (not hovered): image on top, info below. On hover: two columns */}
-                <div className="w-full h-full flex flex-col md:group-hover:flex-row transition-all duration-500">
-                  {/* Image section */}
-                  <div className="w-full h-[180px] md:group-hover:w-1/2 md:group-hover:h-full rounded-t-xl md:group-hover:rounded-l-xl md:group-hover:rounded-tr-none overflow-hidden transition-all duration-300">
-                    <img
-                      src={item.card}
-                      alt={item.title}
-                      className="object-cover w-full h-full md:group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                  </div>
-                  {/* Info section */}
-                  <div className="flex flex-col justify-between h-[calc(100%-180px)] md:group-hover:h-full p-4 w-full md:group-hover:w-1/2 transition-all duration-300">
-                    <div>
-                      <h3 className="font-semibold text-base md:text-lg mb-1 line-clamp-1">{item.title}</h3>
-                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 line-clamp-2 md:group-hover:line-clamp-none transition-all duration-200">{item.description}</p>
+      {/* Responsive Carousel Gallery */}
+      <Carousel
+        className="w-full"
+        plugins={[autoplayRef.current]}
+        onMouseEnter={autoplayRef.current.stop}
+        onMouseLeave={autoplayRef.current.reset}
+      >
+        <CarouselContent>
+          {filteredItems.map((item) => (
+            <CarouselItem
+              key={item.id}
+              className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3"
+            >
+              <div className="p-1">
+                {/* Card content */}
+                <div
+                  className="flex-shrink-0 w-full h-[340px] bg-white dark:bg-gray-900 rounded-xl shadow group transition-all duration-300 border border-gray-100 dark:border-gray-800 relative md:hover:w-[600px] md:hover:max-w-[640px] md:hover:z-10"
+                >
+                  <div className="w-full h-full flex flex-col md:group-hover:flex-row transition-all duration-500">
+                    {/* Image section */}
+                    <div className="w-full h-[180px] md:group-hover:w-1/2 md:group-hover:h-full rounded-t-xl md:group-hover:rounded-l-xl md:group-hover:rounded-tr-none overflow-hidden transition-all duration-300">
+                      <img
+                        src={item.card}
+                        alt={item.title}
+                        className="object-cover w-full h-full md:group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
                     </div>
-                    <div className="mt-2 flex items-center justify-between">
-                      <button
-                        type="button"
-                        onClick={() => openGallery(item)}
-                        className="text-xs md:text-sm font-medium text-blue-600 hover:underline flex items-center gap-1"
-                      >
-                        View Gallery ({item.images.length} image{item.images.length > 1 ? 's' : ''})
-                        <span aria-hidden className="ml-1">→</span>
-                      </button>
+                    {/* Info section */}
+                    <div className="flex flex-col justify-between h-[calc(100%-180px)] md:group-hover:h-full p-4 w-full md:group-hover:w-1/2 transition-all duration-300">
+                      <div>
+                        <h3 className="font-semibold text-base md:text-lg mb-1 line-clamp-1">{item.title}</h3>
+                        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 line-clamp-2 md:group-hover:line-clamp-none transition-all duration-200">{item.description}</p>
+                      </div>
+                      <div className="mt-2 flex items-center justify-between">
+                        <button
+                          type="button"
+                          onClick={() => openGallery(item)}
+                          className="text-xs md:text-sm font-medium text-blue-600 hover:underline flex items-center gap-1"
+                        >
+                          View Gallery ({item.images.length} image{item.images.length > 1 ? 's' : ''})
+                          <span aria-hidden className="ml-1">→</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-        {/* Modal Image Viewer */}
-        {openModal && selectedItem && (
-          <div
-            role="dialog"
-            aria-modal="true"
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
-            onClick={(e) => { if (e.target === e.currentTarget) closeModal(); }}
-          >
-            <div className="bg-white dark:bg-gray-900 rounded-lg max-w-4xl w-full shadow-lg overflow-hidden">
-              <div className="relative">
-                <button
-                  aria-label="Close"
-                  className="absolute right-2 top-2 z-20 bg-white/80 dark:bg-gray-800/80 rounded-md p-1"
-                  onClick={closeModal}
-                >
-                  ✕
-                </button>
-                <Image
-                  key={selectedImageIndex}
-                  src={selectedItem.images[selectedImageIndex]}
-                  alt={`${selectedItem.title} - ${selectedImageIndex + 1}`}
-                  className="w-full h-[56vh] object-contain bg-black"
-                  width={1200}
-                  height={675}
-                />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="hidden sm:flex" />
+        <CarouselNext className="hidden sm:flex" />
+      </Carousel>
 
+      {/* Modal Image Viewer */}
+      {openModal && selectedItem && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+          onClick={(e) => { if (e.target === e.currentTarget) closeModal(); }}
+        >
+          <div className="bg-white dark:bg-gray-900 rounded-lg max-w-4xl w-full shadow-lg overflow-hidden">
+            <div className="relative">
+              <button
+                aria-label="Close"
+                className="absolute right-2 top-2 z-20 bg-white/80 dark:bg-gray-800/80 rounded-md p-1"
+                onClick={closeModal}
+              >
+                ✕
+              </button>
+              <Image
+                key={selectedImageIndex}
+                src={selectedItem.images[selectedImageIndex]}
+                alt={`${selectedItem.title} - ${selectedImageIndex + 1}`}
+                className="w-full h-[56vh] object-contain bg-black"
+                width={1200}
+                height={675}
+              />
+
+              <button
+                aria-label="Previous image"
+                onClick={() => navigateModalImage("left")}
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 rounded-full p-2"
+              >
+                ←
+              </button>
+              <button
+                aria-label="Next image"
+                onClick={() => navigateModalImage("right")}
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 rounded-full p-2"
+              >
+                →
+              </button>
+            </div>
+            {/* Thumbnails */}
+            <div className="flex gap-2 p-3 overflow-x-auto bg-card">
+              {selectedItem.images.map((img, idx) => (
                 <button
-                  aria-label="Previous image"
-                  onClick={() => navigateModalImage("left")}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 rounded-full p-2"
+                  key={idx}
+                  className={`flex-shrink-0 w-20 h-14 rounded-md overflow-hidden border ${idx === selectedImageIndex ? 'ring-2 ring-primary' : 'opacity-70 hover:opacity-100'}`}
+                  onClick={() => setSelectedImageIndex(idx)}
                 >
-                  ←
+                  <Image src={img} alt={`thumb-${idx}`} className="w-full h-full object-cover" width={160} height={90} />
                 </button>
-                <button
-                  aria-label="Next image"
-                  onClick={() => navigateModalImage("right")}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 rounded-full p-2"
-                >
-                  →
-                </button>
-              </div>
-              {/* Thumbnails */}
-              <div className="flex gap-2 p-3 overflow-x-auto bg-card">
-                {selectedItem.images.map((img, idx) => (
-                  <button
-                    key={idx}
-                    className={`flex-shrink-0 w-20 h-14 rounded-md overflow-hidden border ${idx === selectedImageIndex ? 'ring-2 ring-primary' : 'opacity-70 hover:opacity-100'}`}
-                    onClick={() => setSelectedImageIndex(idx)}
-                  >
-                    <Image src={img} alt={`thumb-${idx}`} className="w-full h-full object-cover" width={160} height={90} />
-                  </button>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
-        )}
-        {/* Navigation buttons */}
-        <div className="absolute bottom-2 right-2 flex gap-2 z-20">
-          <button
-            type="button"
-            aria-label="Scroll left"
-            className=" bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition disabled:opacity-50"
-            onClick={scrollLeft}
-            disabled={atStart}
-          >
-            <span aria-hidden>←</span>
-          </button>
-          <button
-            type="button"
-            aria-label="Scroll right"
-            className="bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition disabled:opacity-50"
-            onClick={scrollRight}
-            disabled={atEnd}
-          >
-            <span aria-hidden>→</span>
-          </button>
         </div>
-      </div>
+      )}
       {/* Hide scrollbar for all browsers */}
       <style jsx>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
