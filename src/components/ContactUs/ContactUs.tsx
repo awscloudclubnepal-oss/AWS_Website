@@ -26,7 +26,7 @@ function ContactUs() {
 
                 <div>
                   <p>Email</p>
-                  <span className="font-semibold">hello@gmail.com</span>
+                  <span className="font-semibold">awscloudclub.tu@gmail.com</span>
                 </div>
               </div>
             </div>

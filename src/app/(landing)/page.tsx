@@ -28,7 +28,7 @@ function Page() {
         <PresidentReview />
         <FAQs />
         <ContributorsSection />
-        <TestimonialSection />
+        {/* <TestimonialSection /> */}
         <ContactUs />
         <CallToAction />
       </div>
