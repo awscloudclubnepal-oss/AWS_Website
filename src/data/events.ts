@@ -35,7 +35,7 @@ export const events: EventItem[] = [
     venue: 'Khwopa College of Engineering',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/aws-fundamentals-workshop-khwopa'
+    coverImage: '/images/aws-fundamentals-workshop-khwopa.jpg'
   },
   {
     id: 'cloud-one-0-one:-a-beginner’s-guide-to-cloud-computing-virtual',
@@ -45,7 +45,7 @@ export const events: EventItem[] = [
     venue: 'Virtual',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/cloud-one-0-one:-a-beginner’s-guide-to-cloud-computing-virtual'
+    coverImage: '/images/cloud-one-0-one:-a-beginner’s-guide-to-cloud-computing-virtual.jpg'
   },
   {
     id: 'aws-fundamentals-workshop-kec',
@@ -55,7 +55,7 @@ export const events: EventItem[] = [
     venue: 'KEC, Kalimati',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/aws-fundamentals-workshop-kec'
+    coverImage: '/images/aws-fundamentals-workshop-kec.jpg'
   },
   {
     id: 'aws-fundamentals-workshop-advance',
@@ -65,7 +65,7 @@ export const events: EventItem[] = [
     venue: 'Advance College of Engineering and Management, Kalanki',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/aws-fundamentals-workshop-advance'
+    coverImage: '/images/aws-fundamentals-workshop-advance.jpg'
   },
   {
     id: 'aws-fundamentals-workshop-ncit',
@@ -75,7 +75,7 @@ export const events: EventItem[] = [
     venue: 'NCIT, Balkumari',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/aws-fundamentals-workshop-ncit'
+    coverImage: '/images/aws-fundamentals-workshop-ncit.jpg'
   },
   {
     id: 'ai-&-ml-on-aws-advance',
@@ -85,7 +85,7 @@ export const events: EventItem[] = [
     venue: 'Advance College of Engineering and Management (ACEM)',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/ai-&-ml-on-aws-advance'
+    coverImage: '/images/ai-&-ml-on-aws-advance.jpg'
   },
   {
     id: 'navigating-the-cloud-and-communication-virtual',
@@ -95,7 +95,7 @@ export const events: EventItem[] = [
     venue: 'Virtual',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/navigating-the-cloud-and-communication-virtual'
+    coverImage: '/images/navigating-the-cloud-and-communication-virtual.jpg'
   },
   {
     id: 'aws-fundamentals-workshop:-hands-on-cloud-computing-kathmandu',
@@ -105,7 +105,7 @@ export const events: EventItem[] = [
     venue: 'Kathmandu Model College, Bagbazar',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/aws-fundamentals-workshop:-hands-on-cloud-computing-kathmandu'
+    coverImage: '/images/aws-fundamentals-workshop:-hands-on-cloud-computing-kathmandu.jpg'
   },
   {
     id: 'hands-on-aws-camp:-exploring-ec2-&-linux-cli-st',
@@ -115,7 +115,7 @@ export const events: EventItem[] = [
     venue: 'St. Xavier’s College, Maitighar',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/hands-on-aws-camp:-exploring-ec2-&-linux-cli-st'
+    coverImage: '/images/hands-on-aws-camp:-exploring-ec2-&-linux-cli-st.jpg'
   },
   {
     id: 'how-to-become-aws-cloud-club-captain-virtual',
@@ -125,7 +125,7 @@ export const events: EventItem[] = [
     venue: 'Virtual',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/how-to-become-aws-cloud-club-captain-virtual'
+    coverImage: '/images/how-to-become-aws-cloud-club-captain-virtual.jpg'
   },
   {
     id: 'aws-genai-meetup-patan',
@@ -135,7 +135,7 @@ export const events: EventItem[] = [
     venue: 'Patan Multiple Campus, Lalitpur',
     tags: ['Meetup'],
     status: 'past',
-    coverImage: '/images/aws-genai-meetup-patan'
+    coverImage: '/images/aws-genai-meetup-patan.jpg'
   },
   {
     id: 'aws-genai-camp-pashchimanchal',
@@ -145,7 +145,7 @@ export const events: EventItem[] = [
     venue: 'Pashchimanchal Campus, Pokhara',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/aws-genai-camp-pashchimanchal'
+    coverImage: '/images/aws-genai-camp-pashchimanchal.jpg'
   },
   {
     id: 'aws-genai-camp-himalaya',
@@ -155,7 +155,7 @@ export const events: EventItem[] = [
     venue: 'Himalaya Engineering College',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/aws-genai-camp-himalaya'
+    coverImage: '/images/aws-genai-camp-himalaya.jpg'
   }
 
 ];
