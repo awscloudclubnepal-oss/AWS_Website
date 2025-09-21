@@ -27,11 +27,11 @@ const contributors: TeamMember[] = [
     id: 3,
     name: "Jeeni Shrestha",
     designation: "Developer",
-    image: "/contributors/jeeni.webp",
+    image: "/contributors/jeeni.jpg",
     teamTag: "",
     social: {
-      github: "https://github.com/jeeni",
-      linkedin: "https://linkedin.com/in/jeeni",
+      github: "https://github.com/jeeni18",
+      linkedin: "https://www.linkedin.com/in/jeeni-shrestha-a041912b5/",
     },
   },
 ];
