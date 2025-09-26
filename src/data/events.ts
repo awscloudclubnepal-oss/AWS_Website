@@ -45,7 +45,7 @@ export const events: EventItem[] = [
     venue: 'Virtual',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/cloud-one-0-one:-a-beginner’s-guide-to-cloud-computing-virtual.jpg'
+    coverImage: '/images/cloud-one-0-one_-a-beginner’s-guide-to-cloud-computing-virtual.jpg'
   },
   {
     id: 'aws-fundamentals-workshop-kec',
@@ -105,7 +105,7 @@ export const events: EventItem[] = [
     venue: 'Kathmandu Model College, Bagbazar',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/aws-fundamentals-workshop:-hands-on-cloud-computing-kathmandu.jpg'
+    coverImage: '/images/aws-fundamentals-workshop_-hands-on-cloud-computing-kathmandu.jpg'
   },
   {
     id: 'hands-on-aws-camp:-exploring-ec2-&-linux-cli-st',
@@ -115,7 +115,7 @@ export const events: EventItem[] = [
     venue: 'St. Xavier’s College, Maitighar',
     tags: ['Workshop'],
     status: 'past',
-    coverImage: '/images/hands-on-aws-camp:-exploring-ec2-&-linux-cli-st.jpg'
+    coverImage: '/images/hands-on-aws-camp_-exploring-ec2-&-linux-cli-st.jpg'
   },
   {
     id: 'how-to-become-aws-cloud-club-captain-virtual',
