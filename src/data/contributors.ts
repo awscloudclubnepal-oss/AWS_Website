@@ -34,6 +34,17 @@ const contributors: TeamMember[] = [
       linkedin: "https://linkedin.com/in/jeeni",
     },
   },
+  {
+    id: 4,
+    name: "Niraj Kafle",
+    designation: "Developer",
+    image: "/contributors/niraj.png",
+    teamTag: "",
+    social: {
+      github: "https://github.com/kafle1",
+      linkedin: "https://www.linkedin.com/in/buckwheat8848",
+    },
+  },
 ];
 
 export default contributors;
