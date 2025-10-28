@@ -5,7 +5,7 @@ export const events: EventItem[] = [
     id: 'student-community-day-2025',
     title: 'AWS Student Community Day Nepal 2025',
     description: 'A flagship gathering of AWS student builders, workshops, talks & networking.',
-    date: '2025-10-18',
+    date: '2025-12-27',
     startTime: '09:00',
     endTime: '17:30',
     venue: 'Kathmandu (TBA)',

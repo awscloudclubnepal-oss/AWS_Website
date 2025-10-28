@@ -62,7 +62,7 @@ function Rsvp() {
 
           {/* Countdown */}
           <div className="flex items-start mb-6 sm:mb-8 w-full">
-            <CountdownTimer targetDate="2025-11-15T08:00:00" large />
+            <CountdownTimer targetDate="2025-12-27T08:00:00" large />
           </div>
 
           {/* Event Info */}
@@ -71,7 +71,7 @@ function Rsvp() {
               <div className="flex items-center gap-2 text-xs sm:text-sm md:text-base">
                 <CalendarDays className="w-4 h-4 shrink-0" />
                 <span className="text-xs font-medium">
-                  Nov 15, 2025 | 10 A.M - 5 P.M
+                  Dec 27, 2025 | 10 A.M - 5 P.M
                 </span>
               </div>
 
