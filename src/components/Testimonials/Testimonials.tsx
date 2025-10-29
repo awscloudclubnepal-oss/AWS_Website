@@ -29,9 +29,6 @@ export function TestimonialSection() {
             <h2 className="text-4xl lg:text-5xl font-bold">
               Loved by the Community
             </h2>
-            <p className="mt-4 sm:mt-6 text-sm sm:text-base">
-              Harum quae dolore orrupti aut temporibus ariatur.
-            </p>
           </div>
           <div className="mt-6 sm:mt-8 md:mt-12 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {testimonialChunks.map((chunk, chunkIndex) => (

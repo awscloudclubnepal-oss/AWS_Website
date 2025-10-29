@@ -14,9 +14,6 @@ function ContactUs() {
                 Let&apos;s get in touch with us
               </h2>
 
-              <p className="mt-4 text-muted-foreground">
-                Harum quae dolore orrupti aut temporibus ariatur.
-              </p>
 
               <div className="my-7 space-y-5 lg:my-10 w-full">
                 <div>
