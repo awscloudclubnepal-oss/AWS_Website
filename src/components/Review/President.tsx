@@ -12,7 +12,7 @@ export default function PresidentReview() {
           </h2>
           <p className="text-sm sm:text-base md:text-lg">
             AWS Cloud Club Nepal is more than just a student community.{" "}
-            <span className="font-medium">It&aposs a movement</span> —
+            <span className="font-medium">It&aposs a movement</span> 
             empowering students, developers, and innovators to learn, build, and
             grow with the power of AWS Cloud.
           </p>
@@ -27,13 +27,13 @@ export default function PresidentReview() {
             <div className="mb-8 sm:mb-12 mt-8 sm:mt-12 grid grid-cols-2 gap-2 md:mb-0">
               <div className="space-y-3 sm:space-y-4">
                 <div className="bg-linear-to-r from-zinc-950 to-zinc-600 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-bold text-transparent dark:from-white dark:to-zinc-800">
-                  +2000
+                  +4200
                 </div>
                 <p className="text-sm sm:text-base">Community Members</p>
               </div>
               <div className="space-y-3 sm:space-y-4">
                 <div className="bg-linear-to-r from-zinc-950 to-zinc-600 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-bold text-transparent dark:from-white dark:to-zinc-800">
-                  +50
+                  +45
                 </div>
                 <p className="text-sm sm:text-base">Workshops & Events</p>
               </div>
