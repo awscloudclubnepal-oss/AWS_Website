@@ -16,7 +16,7 @@ function SponserUs() {
   const logo2 = isDark ? "/AWS_SCD_2025_black_bg.png":"/AWS_SCD_2025_white_bg.png"; 
   
   return (
-    <div className="bg-transparent   text-center px-8 pt-8 mx-8 mt-8">
+    <div className=" w-full bg-transparent  text-center px-8 pt-8 mx-8 mt-8">
       <div className="flex justify-center items-center mb-8">
       <div className="flex justify-center items-center gap-2  px-4 w-1/2">
         <div className="border-transparent">
@@ -44,7 +44,7 @@ function SponserUs() {
           BE THE SPONSER
         </h1>
       </div>
-      <div className="flex gap-4 justify-center items-center">
+      <div className="flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center">
 
         <Button
           size="lg"
@@ -84,7 +84,7 @@ function SponserUs() {
         </Button>
       </div>
       <div className="px-6 pt-6 text-center flex justify-center items-center">
-        <p>
+        <p className="max-[418px]:flex max-[418px]:flex-col">
           Email us:
           <span>
             <a href="mailto:awscloudclub.tu@gmail.com">

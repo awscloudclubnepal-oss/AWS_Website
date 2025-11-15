@@ -33,9 +33,9 @@ function Rsvp() {
       {/* lines end */}
       
       {/* Flex column */}
-      <div className="flex flex-col gap-y-2 p-1 justify-center items-center ">
+      <div className=" w-full max-w-6xl flex flex-col gap-y-2 p-1 justify-center items-center ">
         {/* Grid Layout */}
-        <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 md:p-8">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 md:p-8">
           {/* Image Side */}
           <div className="flex items-center justify-center order-1  md:block">
             <Image
