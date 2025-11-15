@@ -35,7 +35,7 @@ export const Navbar = () => {
                 className="flex items-center space-x-2"
               >
                 <Image
-                  src="/logo.png"
+                  src="/TU_AWSlogo_Blue.png"
                   width={70}
                   height={40}
                   alt="logo"
