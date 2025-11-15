@@ -5,6 +5,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import ThemeToggle from "../Theme/ThemeSwitch";
+import { useTheme } from "next-themes";
 
 const menuItems = [
   { name: "Events", href: "#events" },
@@ -15,6 +16,13 @@ const menuItems = [
 
 export const Navbar = () => {
   const [menuState, setMenuState] = React.useState(false);
+
+  const { theme , resolvedTheme } = useTheme();
+  const [mounted ,setMounted ] = React.useState(false);
+  React.useEffect(()=> setMounted(true),[]);
+
+  const isDark = mounted ? (theme === "dark" || resolvedTheme === "dark"):false;
+  const path = isDark ?"/TU_AWSlogo_White.png":"/TU_AWSlogo_Blue.png";
 
   return (
     <header>
@@ -35,7 +43,7 @@ export const Navbar = () => {
                 className="flex items-center space-x-2"
               >
                 <Image
-                  src="/TU_AWSlogo_Blue.png"
+                  src={path}
                   width={70}
                   height={40}
                   alt="logo"
