@@ -104,7 +104,7 @@ export const teamMembers: TeamMember[] = [
     teamTag: "core team",
     image: "/teams/mohit.png",
     social: {
-      linkedin: "https://www.linkedin.com/in/mohit-bhandari",
+      linkedin: "https://www.linkedin.com/in/mohitbhandari7/",
     },
   },
   //   {
