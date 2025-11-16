@@ -118,8 +118,6 @@ function Rsvp() {
             </div>
           </div>
         </div>
-        {/* Sponser us Section */}
-        <SponserUs/>
       </div>
     </div>
   );

@@ -17,6 +17,11 @@ function SponserUs() {
   
   return (
     <div className=" w-full bg-transparent  text-center px-8 pt-8 mx-8 mt-8">
+    <div className="text-center flex justify-center items-center">
+    <h1 className="mb-6 sm:mb-8 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight xl:[line-height:1.125]">
+    SPONSOR US
+    </h1>
+    </div>
       <div className="flex justify-center items-center mb-8">
       <div className="flex justify-center items-center gap-2  px-4 w-1/2">
         <div className="border-transparent">
@@ -39,11 +44,6 @@ function SponserUs() {
         </div>
       </div>
       </div>
-      <div className="text-center flex justify-center items-center">
-        <h1 className="mb-6 sm:mb-8 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight xl:[line-height:1.125]">
-          BE THE SPONSER
-        </h1>
-      </div>
       <div className="flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center">
 
         <Button
@@ -55,7 +55,7 @@ function SponserUs() {
             target="_blank"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfXtkoxGfT_CmEzBIxDF9GPogq2qHUTzbWBhmW7WALSTwtv4Q/viewform"
           >
-            Sponser Form 
+            Sponsor Form 
           </Link>
         </Button>
         <Button
