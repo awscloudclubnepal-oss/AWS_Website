@@ -37,7 +37,6 @@ function Page() {
         <HeroSection />
         <Rsvp />
         <LogoClouds />
-        <SponserUs/>
         <EventsSection />
         <Team />
         <PresidentReview />

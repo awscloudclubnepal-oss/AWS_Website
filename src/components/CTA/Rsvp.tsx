@@ -118,6 +118,7 @@ function Rsvp() {
             </div>
           </div>
         </div>
+        <SponserUs/>
       </div>
     </div>
   );
