@@ -54,7 +54,7 @@ export default function PresidentReview() {
                 </cite>
                 <Image
                   className="border rounded-xl h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 object-contain"
-                  src="/logo.png"
+                  src="/teams/nikhil.jpg"
                   alt="AWS Club Logo"
                   height="50"
                   width="50"

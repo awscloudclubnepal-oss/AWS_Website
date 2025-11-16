@@ -45,6 +45,17 @@ const contributors: TeamMember[] = [
       linkedin: "https://www.linkedin.com/in/buckwheat8848",
     },
   },
+    {
+    id: 5,
+    name: "Kshitiz Rai",
+    designation: "Developer",
+    image: "/contributors/kshitizrai.jpg",
+    teamTag: "",
+    social: {
+      github: "https://github.com/kz1232",
+      linkedin: "https://www.linkedin.com/in/kshitiz-rai1",
+    },
+  },
 ];
 
 export default contributors;
