@@ -1,6 +1,7 @@
 import { HTMLAttributes, useEffect, useState } from "react";
 import WaveReveal from "@/components/ui/wave-reveal";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: { image: string; title: string };
@@ -26,9 +27,11 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
       )}
       {...props}
     >
-      <img
+      <Image
         src={item.image}
         alt={item.title}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className={cn("h-full w-full object-cover", {
           "blur-[2px]": index !== activeItem,
         })}

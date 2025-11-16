@@ -4,11 +4,25 @@ import Rsvp from "@/components/CTA/Rsvp";
 import FAQs from "@/components/FAQ/FAQ";
 import { HeroSection } from "@/components/Hero/Hero";
 import LogoClouds from "@/components/LogoCloud/LogoCloud";
-import Team from "@/components/Teams/Team";
 import PresidentReview from "@/components/Review/President";
-import { TestimonialSection } from "@/components/Testimonials";
-import { ContributorsSection } from "@/components/Contributors";
-import { EventsSection } from "@/components/Events";
+import dynamic from "next/dynamic";
+
+// Lazy load heavy components to reduce initial bundle size
+const Team = dynamic(() => import("@/components/Teams/Team"), {
+  loading: () => <div className="h-96 w-full animate-pulse bg-muted/10" />,
+});
+
+const EventsSection = dynamic(() => import("@/components/Events").then(mod => ({ default: mod.EventsSection })), {
+  loading: () => <div className="h-96 w-full animate-pulse bg-muted/10" />,
+});
+
+const ContributorsSection = dynamic(() => import("@/components/Contributors").then(mod => ({ default: mod.ContributorsSection })), {
+  loading: () => <div className="h-96 w-full animate-pulse bg-muted/10" />,
+});
+
+const SponserUs = dynamic(() => import("@/components/CountDown/SponserUsComponent"), {
+  loading: () => <div className="h-96 w-full animate-pulse bg-muted/10" />,
+});
 
 function Page() {
   return (

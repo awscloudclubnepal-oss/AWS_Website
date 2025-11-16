@@ -3,7 +3,8 @@ import { TeamMember } from "@/interface/team";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { Github, Linkedin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 
 type Testimonial = TeamMember;
 
@@ -16,7 +17,20 @@ export const AnimatedTestimonials = ({
 }) => {
   const [active, setActive] = useState(0);
   const [mounted, setMounted] = useState(false);
-//Trigger the randomness function after the mouting  
+
+  const handleNext = useCallback(() => {
+    setActive((prev) => (prev + 1) % testimonials.length);
+  }, [testimonials.length]);
+
+  const handlePrev = useCallback(() => {
+    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  }, [testimonials.length]);
+
+  const isActive = (index: number) => {
+    return index === active;
+  };
+
+  //Trigger the randomness function after the mouting  
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -26,24 +40,13 @@ export const AnimatedTestimonials = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, handleNext]);
   
   useEffect(()=>{
     setActive(0);
   },[testimonials]);
   
   if (!mounted) return null;
-  const handleNext = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const isActive = (index: number) => {
-    return index=== active;
-  };
 
 
   const randomRotateY = () => {
@@ -81,17 +84,18 @@ export const AnimatedTestimonials = ({
                     rotate: randomRotateY(),
                   }}
                   transition={{
-                    duration: 0.4,
+                    duration: 0.3,
                     ease: "easeInOut",
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     width={500}
                     height={500}
                     draggable={false}
+                    priority={isActive(index)}
                     className="h-full w-full grayscale hover:grayscale-0 transition-all ease-linear duration-100 rounded-3xl object-cover object-center"
                   />
                 </motion.div>
@@ -115,7 +119,7 @@ export const AnimatedTestimonials = ({
               opacity: 0,
             }}
             transition={{
-              duration: 0.2,
+              duration: 0.15,
               ease: "easeInOut",
             }}
           >
@@ -142,9 +146,9 @@ export const AnimatedTestimonials = ({
                       y: 0,
                     }}
                     transition={{
-                      duration: 0.2,
+                      duration: 0.15,
                       ease: "easeInOut",
-                      delay: 0.02 * index,
+                      delay: 0.015 * index,
                     }}
                     className="inline-block"
                   >
