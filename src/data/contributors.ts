@@ -38,7 +38,7 @@ const contributors: TeamMember[] = [
     id: 4,
     name: "Niraj Kafle",
     designation: "Developer",
-    image: "/contributors/niraj.png",
+    image: "/contributors/niraj.jpeg",
     teamTag: "",
     social: {
       github: "https://github.com/kafle1",
