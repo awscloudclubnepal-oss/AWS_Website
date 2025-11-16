@@ -20,10 +20,6 @@ const ContributorsSection = dynamic(() => import("@/components/Contributors").th
   loading: () => <div className="h-96 w-full animate-pulse bg-muted/10" />,
 });
 
-const SponserUs = dynamic(() => import("@/components/CountDown/SponserUsComponent"), {
-  loading: () => <div className="h-96 w-full animate-pulse bg-muted/10" />,
-});
-
 function Page() {
   return (
     <div className="w-full grid grid-cols-1 xl:grid-cols-[24px_1fr_24px] max-w-7xl mx-auto">

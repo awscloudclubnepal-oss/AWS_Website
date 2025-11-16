@@ -17,10 +17,10 @@ export default function Team() {
   }, [selected]);
 
   return (
-    <section id="teams" className="px-6 py-16 space-y-12">
+    <section id="teams" className="px-4 sm:px-6 py-12 sm:py-16 space-y-8 sm:space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl lg:text-5xl font-bold">Meet Our Team</h2>
-        <p className="mt-4 text-lg">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Meet Our Team</h2>
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg">
           Discover the talented individuals behind our success.
         </p>
       </div>
