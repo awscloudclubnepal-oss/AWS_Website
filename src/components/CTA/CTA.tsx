@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Mail, SendHorizonal } from "lucide-react";
+import { Users, ArrowRight, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export default function CallToAction() {
   return (
@@ -25,39 +26,39 @@ export default function CallToAction() {
       {/* lines end */}
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 sm:py-12 md:py-20 lg:py-32">
-        <div className="text-center">
+        <div className="text-center space-y-6 sm:space-y-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Join 4200+ Members</span>
+          </div>
+
           <h2 className="text-balance text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-            Join Our NewsLetter
+            Become Part of Our Community
           </h2>
-          <p className="mt-3 sm:mt-4 font-medium text-sm sm:text-base">
-            Stay updated with our latest open-source projects and community
-            news.
+          
+          <p className="mt-3 sm:mt-4 font-medium text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            Connect with cloud enthusiasts, attend exclusive workshops, and stay updated 
+            with the latest AWS events in Nepal.
           </p>
 
-          <form action="" className="mx-auto mt-6 sm:mt-10 lg:mt-12 max-w-sm">
-            <div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.75rem)] border pr-2 sm:pr-3 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
-              <Mail className="text-caption pointer-events-none absolute inset-y-0 left-4 sm:left-5 my-auto size-4 sm:size-5" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+            <Button
+              size="lg"
+              className="group relative overflow-hidden bg-gradient-to-r from-[#a166e8] to-[#8b5ad6] hover:from-[#8b5ad6] hover:to-[#a166e8] text-white font-semibold px-8 py-6 text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+              asChild
+            >
+              <Link
+                href="https://www.meetup.com/aws-cloud-club-at-tribhuvan-university/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Users className="w-5 h-5 mr-2" />
+                Join Now on Meetup
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
 
-              <input
-                placeholder="Your mail address"
-                className="h-12 sm:h-14 w-full bg-transparent pl-10 sm:pl-12 focus:outline-none text-sm sm:text-base"
-                type="email"
-              />
-
-              <div className="md:pr-1.5 lg:pr-0">
-                <Button
-                  aria-label="submit"
-                  className="rounded-(--radius) text-xs sm:text-sm"
-                >
-                  <span className="hidden md:block">Get Started</span>
-                  <SendHorizonal
-                    className="relative mx-auto size-4 sm:size-5 md:hidden"
-                    strokeWidth={2}
-                  />
-                </Button>
-              </div>
-            </div>
-          </form>
         </div>
       </div>
     </section>
