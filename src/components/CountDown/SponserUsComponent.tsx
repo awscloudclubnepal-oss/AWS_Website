@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { Mail } from "lucide-react";
 
 function SponserUs() {
   const { theme , resolvedTheme } = useTheme();
@@ -83,15 +84,17 @@ function SponserUs() {
           </Link>
         </Button>
       </div>
-      <div className="px-6 pt-6 text-center flex justify-center items-center">
-        <p className="max-[418px]:flex max-[418px]:flex-col">
-          Email us:
-          <span>
-            <a href="mailto:awscloudclub.tu@gmail.com">
-              awscloudclub.tu@gmail.com
-            </a>
+      <div className="mt-8 px-4 sm:px-6 pt-6 flex flex-col items-center gap-3">
+        <p className="text-base sm:text-lg text-muted-foreground font-medium">For Inquiries</p>
+        <a 
+          href="mailto:awscloudclub.tu@gmail.com"
+          className="group inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-full border-2 border-[#a166e8]/30 bg-[#a166e8]/5 hover:bg-[#a166e8]/10 hover:border-[#a166e8]/50 transition-all duration-200 shadow-sm hover:shadow-md"
+        >
+          <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#a166e8] group-hover:scale-110 transition-transform" />
+          <span className="text-sm sm:text-base font-semibold text-foreground group-hover:text-[#a166e8] transition-colors">
+            awscloudclub.tu@gmail.com
           </span>
-        </p>
+        </a>
       </div>
     </div>
   );
