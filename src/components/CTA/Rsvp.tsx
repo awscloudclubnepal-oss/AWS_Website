@@ -39,8 +39,8 @@ function Rsvp() {
           {/* Image Side */}
           <div className="flex items-center justify-center order-1  md:block">
             <Image
-              className="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto"
-              src="/aws-scd.png"
+              className="rounded-xl w-full grayscale-100 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto"
+              src="/aws-scd.jpeg"
               width={450}
               height={450}
               loading="lazy"

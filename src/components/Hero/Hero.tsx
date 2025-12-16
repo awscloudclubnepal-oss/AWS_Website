@@ -38,7 +38,7 @@ export function HeroSection() {
               <div className="max-w-3xl text-center sm:mx-auto lg:mr-auto lg:mt-0 lg:w-4/5">
                 <SCDButton />
                 <h1 className="mt-6 sm:mt-8 text-balance text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight xl:[line-height:1.125]">
-                  AWS Cloud Club in Nepal
+                  AWS Cloud Club at TU
                 </h1>
 
                 <h2 className="mt-6 sm:mt-8 text-balance text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
@@ -66,7 +66,7 @@ export function HeroSection() {
                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto w-full max-w-5xl overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl border-2 p-2 sm:p-3 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
                   <Image
                     className="bg-background aspect-[16/10] sm:aspect-[15/10] relative hidden rounded-lg sm:rounded-xl md:rounded-2xl dark:block grayscale-100 w-full h-auto object-cover"
-                    src="/new-hero.jpeg"
+                    src="/hero-new.jpg"
                     alt="app screen"
                     width="2700"
                     height="1440"
@@ -74,7 +74,7 @@ export function HeroSection() {
                   />
                   <Image
                     className="z-2 border-border/25 aspect-[16/10] sm:aspect-[15/10] relative rounded-lg sm:rounded-xl md:rounded-2xl border dark:hidden w-full h-auto object-cover"
-                    src="/hero-image.png"
+                    src="/hero-new.jpg"
                     alt="app screen"
                     width="2700"
                     height="1440"
