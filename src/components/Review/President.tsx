@@ -50,7 +50,7 @@ export default function PresidentReview() {
 
               <div className="mt-4 sm:mt-6 space-y-2 sm:space-y-3">
                 <cite className="block font-medium text-sm sm:text-base">
-                  Nikhil K.C, Club President
+                  Nikhil K.C, AWS Cloud Club Captain
                 </cite>
                 <Image
                   className="border rounded-xl h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 object-contain"
