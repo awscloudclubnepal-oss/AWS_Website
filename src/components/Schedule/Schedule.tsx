@@ -1,14 +1,33 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+// backend chaiye events lai backend bata tanney 
 import { events } from "@/data/schedule"
 import { TOTAL_HOURS, START_HOUR, getEventStyle, formatTime, formatTimeRange } from "@/lib/utils";
-// can be done using the api request to serverless backend
+import ThemeToggle from "../Theme/ThemeSwitch";
+import ScheduleModal from "./ScheduleModal";
 const rooms = [...new Set(events.map((e) => e.room))];
+interface EVENT_SCHEDULE {
+	id: number,
+	title: string,
+	startTime: string,
+	endTime: string,
+	room: string
+}
 const Schedule = () => {
+	const [selectedEvent, setSelectedEvent] = useState<EVENT_SCHEDULE | null>(null);
+	const openModal = (event: EVENT_SCHEDULE) => {
+		setSelectedEvent(event);
+	};
+	const closeModal = () => {
+		setSelectedEvent(null);
+	};
 	return (
 		<div className="p-4 sm:p-8 bg-background text-foreground">
-			<h1 className="text-3xl font-bold mb-6 text-center">
+			<h1 className=" relative text-3xl font-bold mb-6 text-center  ">
 				Conference Schedule
+				<div className="absolute right-0 top-0 ">
+					<ThemeToggle />
+				</div>
 			</h1>
 
 			{/* Mobile View */}
@@ -17,6 +36,7 @@ const Schedule = () => {
 					<div
 						key={event.id}
 						className="bg-card border border-border rounded-lg p-4 mb-4"
+						onClick={() => openModal(event)}
 					>
 						<h2 className="font-bold text-lg text-primary">{event.title}</h2>
 						<p className="text-muted-foreground">
@@ -78,17 +98,19 @@ const Schedule = () => {
 							))}
 
 							{/* Events in this room */}
-							<div className="relative w-full h-full">
+							<div className="relative w-full h-full p-2">
 								{events
 									.filter((event) => event.room === room)
 									.map((event) => (
 										<div
 											key={event.id}
-											className="absolute top-2 bottom-2 bg-primary text-primary-foreground p-2 rounded shadow-md hover:bg-primary/90 transition overflow-hidden"
-											style={getEventStyle(event.startTime, event.endTime)}>
-											<div className="flex   flex-col justify-center items-center p-4">
-												<div className="font-semibold text-xs  text-wrap align-middle">
-													{event.title}
+											className="absolute top-2 bottom-2 bg-primary text-primary-foreground p-2 rounded shadow-md hover:bg-primary transition overflow-hidden   hover:scale-105 hover:z-50 transition-all ease-in-out p-2"
+											style={getEventStyle(event.startTime, event.endTime)}
+											onClick={() => openModal(event)}
+										>
+											<div className="flex   flex-col justify-center items-center ">
+												<div className="font-semibold  text-xs text-pretty md:text-balance ">
+													{event.title.length > 50 ? `${event.title.slice(0, 20)}...` : event.title}
 												</div>
 												<div className="text-xs opacity-90">
 													{formatTime(parseInt(event.startTime.split(":")[0]))}-
@@ -102,6 +124,7 @@ const Schedule = () => {
 					</div>
 				))}
 			</div>
+			<ScheduleModal event={selectedEvent} onClose={closeModal} />
 		</div>
 	);
 };
