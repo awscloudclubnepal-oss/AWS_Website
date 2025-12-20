@@ -1,6 +1,11 @@
 import Schedule from "@/components/Schedule/Schedule";
 function Page() {
-	return <Schedule />;
+
+
+	return (<>
+		<Schedule />
+	</>
+	)
 }
 
 export default Page;

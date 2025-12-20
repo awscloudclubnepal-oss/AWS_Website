@@ -23,12 +23,14 @@ const Schedule = () => {
 	};
 	return (
 		<div className="p-4 sm:p-8 bg-background text-foreground">
-			<h1 className=" relative text-3xl font-bold mb-6 text-center  ">
-				Conference Schedule
-				<div className="absolute right-0 top-0 ">
+			<div className="flex flex-col items-center sm:flex-row sm:justify-between mb-6">
+				<h1 className="text-3xl font-bold text-center">
+					Conference Schedule
+				</h1>
+				<div className="mt-2 sm:mt-0">
 					<ThemeToggle />
 				</div>
-			</h1>
+			</div>
 
 			{/* Mobile View */}
 			<div className="md:hidden">
@@ -108,7 +110,7 @@ const Schedule = () => {
 											style={getEventStyle(event.startTime, event.endTime)}
 											onClick={() => openModal(event)}
 										>
-											<div className="flex   flex-col justify-center items-center ">
+											<div className="flex flex-col justify-center items-center py-5">
 												<div className="font-semibold  text-xs text-pretty md:text-balance ">
 													{event.title.length > 50 ? `${event.title.slice(0, 20)}...` : event.title}
 												</div>
