@@ -1,47 +1,9 @@
 "use client";
 import React from "react";
 import { events } from "@/data/schedule"
+import { TOTAL_HOURS, START_HOUR, getEventStyle, formatTime, formatTimeRange } from "@/lib/utils";
 // can be done using the api request to serverless backend
 const rooms = [...new Set(events.map((e) => e.room))];
-const TOTAL_HOURS = 8;
-const START_HOUR = 10;
-const formatTime = (hour: number) => {
-	const period = hour >= 12 ? "PM" : "AM";
-	const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
-	return `${displayHour}${period}`;
-};
-
-const formatTimeRange = (startHour: number, endHour: number) => {
-	const startPeriod = startHour >= 12 ? "PM" : "AM";
-	const endPeriod = endHour >= 12 ? "PM" : "AM";
-	const startDisplay =
-		startHour > 12 ? startHour - 12 : startHour === 0 ? 12 : startHour;
-	const endDisplay =
-		endHour > 12 ? endHour - 12 : endHour === 0 ? 12 : endHour;
-
-	if (startPeriod === endPeriod) {
-		return `${startDisplay}-${endDisplay}${startPeriod}`;
-	} else {
-		return `${startDisplay}${startPeriod}-${endDisplay}${endPeriod}`;
-	}
-};
-const getEventStyle = (startTime: string, endTime: string) => {
-	const [startHour, startMin] = startTime.split(":").map(Number);
-	const [endHour, endMin] = endTime.split(":").map(Number);
-
-	const startTotalMins = (startHour - START_HOUR) * 60 + startMin;
-	const endTotalMins = (endHour - START_HOUR) * 60 + endMin;
-
-	const leftPercent = (startTotalMins / (TOTAL_HOURS * 60)) * 100;
-	const widthPercent =
-		((endTotalMins - startTotalMins) / (TOTAL_HOURS * 60)) * 100;
-
-	return {
-		left: `${leftPercent}%`,
-		width: `${widthPercent}%`,
-	};
-};
-
 const Schedule = () => {
 	return (
 		<div className="p-4 sm:p-8 bg-background text-foreground">
@@ -143,5 +105,4 @@ const Schedule = () => {
 		</div>
 	);
 };
-
 export default Schedule;
