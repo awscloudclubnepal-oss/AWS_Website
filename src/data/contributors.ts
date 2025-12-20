@@ -56,6 +56,17 @@ const contributors: TeamMember[] = [
       linkedin: "https://www.linkedin.com/in/kshitiz-rai1",
     },
   },
+    {
+		id: 6,
+		name: "Aaditya Lamichhane",
+		designation: "Developer",
+		image: "/contributors/aaditya.jpeg",
+		teamTag: "",
+		social: {
+			github: "https://github.com/AadityaLamichhane",
+			linkedin: "https://www.linkedin.com/in/aaditya-lamichhane-b6a7072b4",
+		}
+    }
 ];
 
 export default contributors;
