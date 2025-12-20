@@ -10,7 +10,7 @@ export const events: EventItem[] = [
     endTime: '17:30',
     venue: 'Kathmandu (TBA)',
     locationUrl: 'https://www.meetup.com/aws-cloud-club-at-tribhuvan-university/events/310674609/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link&utm_version=v2',
-    coverImage: '/hero-image.png',
+    coverImage: '/aws-scd-old.png',
     tags: ['Meetup'],
     status: 'upcoming'
   },

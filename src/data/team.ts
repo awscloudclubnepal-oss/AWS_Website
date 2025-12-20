@@ -100,7 +100,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 10,
     name: "Mohit Bhandari",
-    designation: "Outreach/Branding Member",
+    designation: "Outreach/Branding Lead",
     teamTag: "core team",
     image: "/teams/mohit.png",
     social: {
