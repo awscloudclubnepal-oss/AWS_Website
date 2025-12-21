@@ -1,23 +1,66 @@
 import Image from "next/image";
+import Link from "next/link";
+import { sponsorcardprops } from "@/data/sponsers"
+
+const title_data = sponsorcardprops[0]
+const second_level_data = sponsorcardprops.slice(1,3)
+const normal_partner_data = sponsorcardprops.slice(3,5)
+
+console.log(second_level_data);
+console.log(normal_partner_data);
+
+
+
+
 const LogoClouds = () => {
   return (
     <div className="py-10 flex items-center justify-center">
-      <div className="max-w-7xl px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-xl space-y-4 sm:space-y-6 mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Our Sponsors</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+            Our Sponsors
+          </h2>
           <p className="text-sm sm:text-base">
             Meet the supports who made AWS Student Community Day 2025 happen.
           </p>
         </div>
-        <div className="text-center mt-8 sm:mt-10">
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-14 gap-y-6 sm:gap-y-10 max-w-screen-lg">
-            <Image 
-              src="/aws.png" 
-              alt="AWS Logo" 
-              width={200} 
-              height={200} 
-              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-[200px] lg:h-[200px] object-contain"
-            />
+        <div className="w-auto text-center mt-8 sm:mt-10">
+          <div>
+            <div>
+              <div className="flex flex-center justify-center">
+                <SponserCard
+                  title={title_data.title}
+                  Imageurl={title_data.imageUrl}
+                   src = {title_data.src}
+                  alttext={title_data.imageUrl}
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+                {second_level_data.map( (partner) => (
+                <SponserCard 
+                key ={partner.id}
+                title = {partner.title}
+                Imageurl = {partner.imageUrl}
+                 src = {partner.src}
+                alttext ={partner.alttext}
+                />
+              ))}  
+              </div>
+            </div>
+            <div className="border-1 m-6 border-blue-50"></div>
+            <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {normal_partner_data.map( (partner) => (
+                <SponserCard 
+                key ={partner.id}
+                title = {partner.title}
+                Imageurl = {partner.imageUrl}
+                src = {partner.src}
+                alttext ={partner.alttext}
+                />
+              ))}  
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -26,3 +69,26 @@ const LogoClouds = () => {
 };
 
 export default LogoClouds;
+
+function SponserCard({ title,Imageurl,src, alttext }) {
+  return (
+    <>
+      <div className="flex aspect-[16/9] flex-col text-center items-center justify-center border-0 gap-3 m-3">
+        <div className=" border-1 border-[#ecb45b] rounded-lg p-2">
+          <p>{title}</p>
+        </div>
+        <div>
+          <Link href={src} rel="noopener noreferrer">
+          <Image
+            src={Imageurl}
+            alt={alttext}
+            height={200}
+            width={500}  
+            className="object-contain h-full max-w-48"
+          />
+            </Link>
+        </div>
+      </div>
+    </>
+  );
+}
