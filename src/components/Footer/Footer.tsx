@@ -35,7 +35,7 @@ export function FooterSection() {
           ))}
         </div>
         <div className="my-6 sm:my-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm">
-          <Link
+          {/* <Link
             href="#"
             target="_blank"
             rel="noopener noreferrer"
@@ -54,9 +54,9 @@ export function FooterSection() {
                 d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"
               ></path>
             </svg>
-          </Link>
+          </Link> */}
           <Link
-            href="#"
+            href="https://www.linkedin.com/company/aws-cloud-club-at-tu/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -76,7 +76,7 @@ export function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61551786940779"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -96,10 +96,10 @@ export function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.youtube.com/@awscloudclub.tunepal"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Threads"
+            aria-label="Youtube"
             className="text-muted-foreground hover:text-primary block"
           >
             <svg
@@ -107,21 +107,16 @@ export function FooterSection() {
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
-              viewBox="0 0 24 24"
+              viewBox="0 0 640 640"
             >
               <path
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M19.25 8.505c-1.577-5.867-7-5.5-7-5.5s-7.5-.5-7.5 8.995s7.5 8.996 7.5 8.996s4.458.296 6.5-3.918c.667-1.858.5-5.573-6-5.573c0 0-3 0-3 2.5c0 .976 1 2 2.5 2s3.171-1.027 3.5-3c1-6-4.5-6.5-6-4"
-                color="currentColor"
-              ></path>
+                fill="currentColor"
+                d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z"
+              />
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.instagram.com/awscloudclub.tu/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -141,7 +136,7 @@ export function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.tiktok.com/@awscloudclubtu"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"

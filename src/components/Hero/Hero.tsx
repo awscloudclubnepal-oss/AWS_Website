@@ -63,31 +63,24 @@ export function HeroSection() {
                   aria-hidden
                   className="absolute inset-0 z-10 from-transparent from-35%"
                 />
-                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto w-full max-w-5xl overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl border-2 p-2 sm:p-3 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                  <Image
-                    className="bg-background aspect-[16/10] sm:aspect-[15/10] relative hidden rounded-lg sm:rounded-xl md:rounded-2xl dark:block grayscale-100 w-full h-auto object-cover"
-                    src="/hero-new.jpg"
-                    alt="app screen"
-                    width="2700"
-                    height="1440"
-                    priority
-                  />
-                  <Image
-                    className="z-2 border-border/25 aspect-[16/10] sm:aspect-[15/10] relative rounded-lg sm:rounded-xl md:rounded-2xl border dark:hidden w-full h-auto object-cover"
-                    src="/hero-new.jpg"
-                    alt="app screen"
-                    width="2700"
-                    height="1440"
-                    priority
-                  />
-
-                  <BorderBeam
-                    duration={7}
-                    delay={3}
-                    size={400}
-                    borderWidth={3}
-                    className="from-transparent via-primary to-transparent"
-                  />
+                {/* <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto w-full max-w-5xl overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl border-2 p-2 sm:p-3 md:p-4 shadow-lg shadow-zinc-950/15 ring-1"> */}
+                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto w-full max-w-5xl overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl border-2 p-3 shadow-lg shadow-zinc-950/15 ring-1">
+                  <div className="relative w-full aspect-[2/1] overflow-hidden rounded-lg">
+                    <Image
+                      src="/hero-new.jpg"
+                      alt="app screen"
+                      fill
+                      className="object-contain w-full h-full"
+                      priority
+                    />
+                  </div>
+                    <BorderBeam
+                      duration={7}
+                      delay={3}
+                      size={400}
+                      borderWidth={3}
+                      className="from-transparent via-primary to-transparent"
+                    />
                 </div>
               </div>
             </motion.div>
