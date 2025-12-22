@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { SponsorCardProps } from '@/interface/ISponsers.ts'
+import { SponsorCardProps } from "@/interface/ISponsers"
 import { sponsorcardprops } from "@/data/sponsers"
 
 
@@ -26,8 +26,9 @@ const LogoClouds = () => {
         <div className="w-auto text-center mt-8 sm:mt-10">
           <div>
             <div>
-              <div className="flex flex-center justify-center">
+              <div className="flex items-center justify-center">
                 <SponserCard
+                  id ={title_data.id}
                   title={title_data.title}
                   imageUrl={title_data.imageUrl}
                    src = {title_data.src}
@@ -38,6 +39,7 @@ const LogoClouds = () => {
                 {second_level_data.map( (partner) => (
                 <SponserCard 
                 key ={partner.id}
+                id={partner.id}
                 title = {partner.title}
                 imageUrl = {partner.imageUrl}
                  src = {partner.src}
@@ -46,12 +48,13 @@ const LogoClouds = () => {
               ))}  
               </div>
             </div>
-            <div className="border-1 m-6 border-blue-50"></div>
+            <div className="border m-6 border-blue-50"></div>
             <div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {normal_partner_data.map( (partner) => (
                 <SponserCard 
                 key ={partner.id}
+                id={partner.id}
                 title = {partner.title}
                 imageUrl = {partner.imageUrl}
                 src = {partner.src}
@@ -69,18 +72,18 @@ const LogoClouds = () => {
 
 export default LogoClouds;
 
-function SponserCard({ title,imageUrl,src, alttext }:SponsorCardProps) {
+function SponserCard({ id, title,imageUrl,src, alttext }:SponsorCardProps) {
   return (
     <>
-      <div className="flex aspect-[16/9] flex-col text-center items-center justify-center border-0 gap-3 m-3">
-        <div className=" border-1 border-[#ecb45b] rounded-lg p-2">
+      <div className="flex aspect-video flex-col text-center items-center justify-center border-0 gap-3 m-3">
+        <div className=" border border-[#ecb45b] rounded-lg p-2">
           <p>{title}</p>
         </div>
         <div>
           <Link href={src} rel="noopener noreferrer">
           <Image
             src={imageUrl}
-            alt={alttext}
+            alt={alttext ?? title}
             height={200}
             width={500}  
             className="object-contain h-full max-w-48"

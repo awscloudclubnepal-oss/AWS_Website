@@ -1,4 +1,4 @@
-import { SponsorCardProps } from '@/interface/ISponsers.ts'
+import { SponsorCardProps } from '@/interface/ISponsers'
 
 export const sponsorcardprops:SponsorCardProps[]=[
     {   
