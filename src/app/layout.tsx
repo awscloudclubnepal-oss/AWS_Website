@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Open_Sans, Public_Sans } from "next/font/google";
+import { Open_Sans, Public_Sans, Anton } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-providers";
 
 export const metadata: Metadata = {
@@ -13,6 +13,13 @@ const open_sans = Open_Sans({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--display-family",
+});
+
+const anton = Anton({
+  weight: "400", // Anton only has weight 400
+  subsets: ["latin"],
+  variable: "--font-anton", // Define the CSS variable
+  display: "swap",
 });
 
 const public_sans = Public_Sans({
@@ -29,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${open_sans.variable} ${public_sans.variable}`}
+      className={`${open_sans.variable} ${public_sans.variable} ${anton.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased overflow-x-hidden">
