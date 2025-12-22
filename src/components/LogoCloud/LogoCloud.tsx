@@ -4,9 +4,9 @@ import { SponsorCardProps } from "@/interface/ISponsers"
 import { sponsorcardprops } from "@/data/sponsers"
 
 
-const title_data = sponsorcardprops[0]
-const second_level_data = sponsorcardprops.slice(1,3)
-const normal_partner_data = sponsorcardprops.slice(3,5)
+const title_data = sponsorcardprops.slice(0,2)
+const second_level_data = sponsorcardprops.slice(2,4)
+const normal_partner_data = sponsorcardprops.slice(4,6)
 
 
 
@@ -26,14 +26,17 @@ const LogoClouds = () => {
         <div className="w-auto text-center mt-8 sm:mt-10">
           <div>
             <div>
-              <div className="flex items-center justify-center">
-                <SponserCard
-                  id ={title_data.id}
-                  title={title_data.title}
-                  imageUrl={title_data.imageUrl}
-                   src = {title_data.src}
-                  alttext={title_data.imageUrl}
+              <div className="flex  flex-col sm:flex-row items-center justify-center gap-8">
+                {title_data.map( (partner) => (
+                <SponserCard 
+                key ={partner.id}
+                id={partner.id}
+                title = {partner.title}
+                imageUrl = {partner.imageUrl}
+                src = {partner.src}
+                alttext ={partner.alttext}
                 />
+              ))} 
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
                 {second_level_data.map( (partner) => (
@@ -76,7 +79,7 @@ function SponserCard({ id, title,imageUrl,src, alttext }:SponsorCardProps) {
   return (
     <>
       <div className="flex aspect-video flex-col text-center items-center justify-center border-0 gap-3 m-3">
-        <div className=" border border-[#ecb45b] rounded-lg p-2">
+        <div className=" border border-[#ecb45b] rounded-sm font-normal font-anton px-3 py-0 tracking-tight ">
           <p>{title}</p>
         </div>
         <div>
@@ -86,7 +89,7 @@ function SponserCard({ id, title,imageUrl,src, alttext }:SponsorCardProps) {
             alt={alttext ?? title}
             height={200}
             width={500}  
-            className="object-contain h-full max-w-48"
+            className="object-contain h-full max-w-48 rounded-lg"
           />
             </Link>
         </div>
