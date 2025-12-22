@@ -3,5 +3,5 @@ export interface SponsorCardProps {
   title: string;
   imageUrl: string;
   src:string; 
-  altText?: string;
+  alttext?: string;
 }

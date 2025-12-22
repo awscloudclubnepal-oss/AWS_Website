@@ -1,13 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
+import { SponsorCardProps } from '@/interface/ISponsers.ts'
 import { sponsorcardprops } from "@/data/sponsers"
+
 
 const title_data = sponsorcardprops[0]
 const second_level_data = sponsorcardprops.slice(1,3)
 const normal_partner_data = sponsorcardprops.slice(3,5)
-
-console.log(second_level_data);
-console.log(normal_partner_data);
 
 
 
@@ -30,7 +29,7 @@ const LogoClouds = () => {
               <div className="flex flex-center justify-center">
                 <SponserCard
                   title={title_data.title}
-                  Imageurl={title_data.imageUrl}
+                  imageUrl={title_data.imageUrl}
                    src = {title_data.src}
                   alttext={title_data.imageUrl}
                 />
@@ -40,7 +39,7 @@ const LogoClouds = () => {
                 <SponserCard 
                 key ={partner.id}
                 title = {partner.title}
-                Imageurl = {partner.imageUrl}
+                imageUrl = {partner.imageUrl}
                  src = {partner.src}
                 alttext ={partner.alttext}
                 />
@@ -54,7 +53,7 @@ const LogoClouds = () => {
                 <SponserCard 
                 key ={partner.id}
                 title = {partner.title}
-                Imageurl = {partner.imageUrl}
+                imageUrl = {partner.imageUrl}
                 src = {partner.src}
                 alttext ={partner.alttext}
                 />
@@ -70,7 +69,7 @@ const LogoClouds = () => {
 
 export default LogoClouds;
 
-function SponserCard({ title,Imageurl,src, alttext }) {
+function SponserCard({ title,imageUrl,src, alttext }:SponsorCardProps) {
   return (
     <>
       <div className="flex aspect-[16/9] flex-col text-center items-center justify-center border-0 gap-3 m-3">
@@ -80,7 +79,7 @@ function SponserCard({ title,Imageurl,src, alttext }) {
         <div>
           <Link href={src} rel="noopener noreferrer">
           <Image
-            src={Imageurl}
+            src={imageUrl}
             alt={alttext}
             height={200}
             width={500}  
