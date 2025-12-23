@@ -1,48 +1,113 @@
 import { SponsorCardProps } from '@/interface/ISponsers'
 
-export const sponsorcardprops:SponsorCardProps[]=[
-    {   
-        id:'partner-1',
-        title:'TITLE SPONSOR',
-        imageUrl:'/TitlePartner.png',
-        src:'https://studii.md/',
-        alttext:'Title partner image here'
-    },
-    {
-        id:'partner-2',
-        title:'TITLE SPONSOR',
-        imageUrl:'/TitlePartner2.png',
-        src:'https://qsystems.ai/',
-        alttext:'Powered by image here'
-    },
-    {
-        id:'partner-3',
-        title:'POWERED BY',
-        imageUrl:'/PoweredBy.png',
-        src:'https://www.wisereducation.info/home',
-        alttext:'Powered by image here'
-    },
-    {
-        id:'partner-4',
-        title:'GOLD SPONSOR',
-        imageUrl:'/GoldPartner.png',
-        src:'https://revketer.ai/',
-        alttext:'Gold partner image here'
-    },
-    {
-        id:'partner-5',
-        title:'TEA PARTNER',
-        imageUrl:'/TeaPartner.png',
-        src:'https://www.instagram.com/chiyakarkhana/',
-        alttext:'Tea partner image here'
-    },
-        {
-        id:'partner-6',
-        title:'AI-INTERVIEW PARTNER',
-        imageUrl:'/AI-InterviewPartner.png',
-        src:'https://aceint.ai/candidate',
-        alttext:'Tea partner image here'
-    },
-
+export const sponsorcardprops: SponsorCardProps[] = [
+  {
+    id: "partner-1",
+    title: "title",
+    imageUrl: "/TitleSponsor.png",
+    src: "https://studii.md/",
+    size: 64,
+    font_size: [], // title hidden
+    alttext: "Title sponsor image here",
+  },
+  {
+    id: "partner-2",
+    title: "title",
+    imageUrl: "/TitleSponsor2.png",
+    src: "https://qsystems.ai/",
+    size: 64,
+    font_size: [],
+    alttext: "Title sponsor image here",
+  },
+  {
+    id: "partner-3",
+    title: "POWERED BY",
+    imageUrl: "/PoweredBy.png",
+    src: "https://www.wisereducation.info/home",
+    size: 60,
+    font_size: ["text-2xl", "sm:text-3xl", "lg:text-[33px]"],
+    alttext: "Powered by image here",
+  },
+  {
+    id: "partner-4",
+    title: "PLATINUM SPONSOR",
+    imageUrl: "/PlatinumSponsor.png",
+    src: "https://aws.amazon.com/",
+    size: 60,
+    font_size: ["text-2xl", "sm:text-3xl", "lg:text-[33px]"],
+    alttext: "Platinum sponsor image here",
+  },
+  {
+    id: "partner-5",
+    title: "GOLD SPONSOR",
+    imageUrl: "/GoldPartner.png",
+    src: "https://revketer.ai/",
+    size: 48,
+    font_size: ["text-xl", "sm:text-2xl", "lg:text-3xl"],
+    alttext: "Gold partner image here",
+  },
+  {
+    id: "partner-6",
+    title: "SILVER SPONSOR",
+    imageUrl: "/SilverSponsor.png",
+    src: "https://gurzu.com/",
+    size: 48,
+    font_size: ["text-xl", "sm:text-2xl", "lg:text-3xl"],
+    alttext: "Silver partner image here",
+  },
+  {
+    id: "partner-7",
+    title: "EDUCATION PARTNER",
+    imageUrl: "/EducationPartner.png",
+    src: "https://github.com/education",
+    size: 32,
+    font_size: ["text-md", "sm:text-xl", "lg:text-[22px]"],
+    alttext: "Education partner image here",
+  },
+  {
+    id: "partner-8",
+    title: "VENUE PARTNER",
+    imageUrl: "/VenuePartner.png",
+    src: "https://acem.edu.np/",
+    size: 32,
+    font_size: ["text-md", "sm:text-xl", "lg:text-[22px]"],
+    alttext: "venue partner image here",
+  },
+  {
+    id: "partner-9",
+    title: "AWS TRAINING PARTNER",
+    imageUrl: "/AWSTrainingPartner.png",
+    src: "#",
+    size: 32,
+    font_size: ["text-md", "sm:text-xl", "lg:text-[22px]"],
+    alttext: "Tea partner image here",
+  },
+  {
+    id: "partner-10",
+    title: "INTERNET PARTNER",
+    imageUrl: "/InternetPartner.png",
+    src: "https://classic.com.np/",
+    size: 32,
+    font_size: ["text-md", "sm:text-xl", "lg:text-[22px]"],
+    alttext: "Internet partner image here",
+  },
+  {
+    id: "partner-11",
+    title: "AI-INTERVIEW PARTNER",
+    imageUrl: "/AI-InterviewPartner.png",
+    src: "https://aceint.ai/candidate",
+    size: 32,
+    font_size: ["text-md", "sm:text-xl", "lg:text-[22px]"],
+    alttext: "Tea partner image here",
+  },
+  {
+    id: "partner-12",
+    title: "TEA PARTNER",
+    imageUrl: "/TeaPartner.png",
+    src: "#",
+    size: 32,
+    font_size: ["text-md", "sm:text-xl", "lg:text-[22px]"],
+    alttext: "Tea partner image here",
+  },
 ];
 
