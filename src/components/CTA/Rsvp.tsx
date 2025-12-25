@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Map, CalendarDays, MapPinned } from "lucide-react";
 import CountdownTimer from "../CountDown/CDComponent";
 import SponserUs from "../CountDown/SponserUsComponent";
+import SpeakerSection from "../CountDown/Speakers";
 
 function Rsvp() {
   return (
@@ -130,6 +131,7 @@ function Rsvp() {
           </div>
         </div>
         <SponserUs/>
+        <SpeakerSection/>
       </div>
     </div>
   );
