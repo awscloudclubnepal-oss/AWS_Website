@@ -31,16 +31,16 @@ function SponserUs() {
            width={300}
            height={80}
             alt="aws logo "
-            className="h-full w-[300px]"
+            className="h-full w-75"
           />
         </div>
-        <div className={`border-l-[1px] ${isDark ? "border-white":"border-black"} mx-2`}>
+        <div className={`border-l ${isDark ? "border-white":"border-black"} mx-2`}>
           <Image 
             src={logo2}
             width={300}
             height={80}            
             alt="aws-scd-logo"
-            className="h-full w-[300px]"
+            className="h-full w-75"
           />
         </div>
       </div>
