@@ -29,9 +29,16 @@ const ScheduleModal = ({ event, onClose }: ScheduleModalProps) => {
 			<div
 				className={`bg-card p-8 rounded-lg shadow-lg max-w-md w-full transition-all duration-300 ${event ? "scale-100 opacity-100" : "scale-90 opacity-0"
 					}`}
-				onClick={e => e.stopPropagation()}
+				onClick={(e) => e.stopPropagation()}
 			>
-				<h2 className="text-2xl font-bold mb-4">{modalEvent.title}</h2>
+				<h2 className="text-2xl font-bold mb-4 break-words">
+					{modalEvent.title}
+				</h2>
+				{modalEvent.speaker && (
+					<p className="text-xl mb-2 text-muted-foreground break-words">
+						by {modalEvent.speaker}
+					</p>
+				)}
 				<p className="text-lg mb-2">
 					{modalEvent.startTime} - {modalEvent.endTime}
 				</p>
