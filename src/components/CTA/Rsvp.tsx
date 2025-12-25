@@ -100,7 +100,18 @@ function Rsvp() {
                     RSVP Now!
                   </Link>
                 </Button>
-
+                <Button
+                  size="lg"
+                  className="text-white w-full sm:w-auto text-sm sm:text-base"
+                  asChild
+                >
+                  <Link
+                    target="_blank"
+                    href="/schedule"
+                  >
+                   Itinerary
+                  </Link>
+                </Button>
                 <Button
                   size="lg"
                   className="text-white w-full sm:w-auto text-sm sm:text-base"
