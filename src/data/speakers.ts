@@ -4,13 +4,13 @@ export const SpeakerCardData: IspeakerCard[] = [
   {
     id: "1",
     coverImage: "/speakers/shubham 1.png",
-    name: "SHUBHAM POKHREL",
+    name: "Shubham Pokhrel",
     occupation: "Honorary Chair, AWS Cloud Club at TU | DevOps Engineer",
   },
   {
     id: "2",
     coverImage: "/speakers/Suraj 1.png",
-    name: "SURAJ BHATTRAI",
+    name: "Suraj Bhattrai",
     occupation: "AWS Certified Solutions Architect Associate",
   },
   {
@@ -28,19 +28,19 @@ export const SpeakerCardData: IspeakerCard[] = [
   {
     id: "5",
     coverImage: "/speakers/Akrur 1.png",
-    name: "AKRUR NEUPANE",
+    name: "Akrur Neupane",
     occupation: "AWS Community Builder | Cloud Ops Engineer",
   },
   {
     id: "6",
     coverImage: "/speakers/APil 1.png",
-    name: "APIL CHAUDHARY",
+    name: "Apil Chaudhary",
     occupation: "AWS Certified Solutions Architect",
   },
   {
     id: "7",
     coverImage: "/speakers/Nirjal 1.png",
-    name: "NIRJAL BHURTEL",
+    name: "Nirjal Bhurtel",
     occupation: "Embedded Software Architect",
   },
   {
@@ -58,13 +58,13 @@ export const SpeakerCardData: IspeakerCard[] = [
   {
     id: "10",
     coverImage: "/speakers/Rishikesh 1.png",
-    name: "RISHIKESH GAUTAM",
+    name: "Rishikesh Gautam",
     occupation: "AWS Community Builder",
   },
   {
     id: "11",
     coverImage: "/speakers/Shushovan 1 (1).png",
-    name: "SHUSHOVAN PAUDYAL",
+    name: "Shushovan Paudyal",
     occupation: "Cloud Consultant",
   },
   {
@@ -76,37 +76,79 @@ export const SpeakerCardData: IspeakerCard[] = [
   {
     id: "13",
     coverImage: "/speakers/Raman 1.png",
-    name: "RAMAN POKHAREL",
+    name: "Raman Pokharel",
     occupation: "Game Developer",
   },
   {
     id: "14",
     coverImage: "/speakers/Abiral Sangaroula.png",
-    name: "ABIRAL SANGROULA",
+    name: "Abiral Sangroula",
     occupation: "Principal Engineer, Qsystems AI",
   },
   {
     id: "15",
     coverImage: "/speakers/Nischal.png",
-    name: "NISCHAL SHAKYA",
+    name: "Nischal Shakya",
     occupation: "Software Engineer, Qsystems AI",
   },
   {
     id: "16",
     coverImage: "/speakers/Devi Bhattrai.png",
-    name: "DEVI BHATTRAI",
+    name: "Devi Bhattrai",
     occupation: "Leader, AWS UG Women in Tech",
   },
   {
     id: "17",
     coverImage: "/speakers/Upendra 1.png",
-    name: "UPENDRA PRASAD NEUPANE",
+    name: "Upendra Prasad Neupane",
     occupation: "Founder, AWS Cloud Club at TU",
   },
   {
     id: "18",
     coverImage: "/speakers/Thakur Paudel.png",
-    name: "THAKUR PAUDEL",
+    name: "Thakur Paudel",
     occupation: "Embedded and Electrical Lead at Yatri Motors",
+  },
+  {
+    id: "19",
+    coverImage: "/speakers/keynote (3).png",
+    name: "Sambit Bhattarai",
+    occupation: "Founder and CEO, RevKeter",
+  },
+  {
+    id: "20",
+    coverImage: "/speakers/keynote.png",
+    name: "Lisa Bagley",
+    occupation: "AWS Cloud Program Lead",
+  },
+  {
+    id: "21",
+    coverImage: "/speakers/keynote (4).png",
+    name: "Raj Sangroula",
+    occupation: "CEO, Qsystems AI",
+  },
+  {
+    id: "22",
+    coverImage: "/speakers/keynote (6).png",
+    name: "Upendra Prasad Neupane",
+    occupation: "Founder, AWS Cloud Club at TU | AWS Community Builder",
+  },
+  {
+    id: "23",
+    coverImage: "/speakers/Tracy.png",
+    name: "Tracy Wang",
+    occupation: "AWS Cloud Club Community Manager",
+  },
+  {
+    id: "24",
+    coverImage: "/speakers/keynote (2).png",
+    name: "Anjani Phuyal",
+    occupation: "CEO, Genese Solutions",
+  },
+  {
+    id: "25",
+    coverImage: "/speakers/keynote (5).png",
+    name: "Prof. Dr. Subarna Shakya",
+    occupation: "Director, IT innovation Center TU",
   },
 ];
