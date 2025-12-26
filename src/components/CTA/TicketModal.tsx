@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Download, X, Loader2, Ticket } from "lucide-react";
+import Image from "next/image";
 
 type TicketModalProps = {
   isOpen: boolean;
@@ -137,7 +138,7 @@ const TicketModal = ({ isOpen, onClose }: TicketModalProps) => {
         {ticketImage && (
           <div className="space-y-4">
             <div className="rounded-lg overflow-hidden border border-border">
-              <img
+              <Image
                 src={ticketImage}
                 alt="Your Event Ticket"
                 className="w-full h-auto"
