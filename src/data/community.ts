@@ -5,7 +5,7 @@ export const communitycardprops: SponsorCardProps[] = [
     id: "community-1",
     title: "title", // here also 'title' is used to avoid display
     imageUrl: "/community/Community.png",
-    src: "https://www.linkedin.com/in/osacascol/",
+    src: "https://www.linkedin.com/company/ascol-i-t-club/",
     size: 32,
     font_size: ["text-md", "sm:text-xl", "lg:text-[22px]"],
     alttext: "commnity partner image here",
