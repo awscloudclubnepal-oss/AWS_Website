@@ -37,14 +37,14 @@ function Rsvp() {
       <div className="absolute bottom-[35px] sm:bottom-[48px] right-[28px] sm:right-[43.5px] z-20 hidden h-[2px] w-3 dark:bg-zinc-300 bg-neutral-500 md:block"></div>
       <div className="absolute bottom-[30px] sm:bottom-[43.5px] right-[33px] sm:right-[48px] z-20 hidden h-3 w-[2px] dark:bg-zinc-300 bg-neutral-500 md:block"></div>
       {/* lines end */}
-      
+
       {/* Flex column */}
       <div className=" w-full max-w-6xl flex flex-col gap-y-2 p-1 justify-center items-center ">
         {/* Grid Layout */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 md:p-8">
           {/* Image Side */}
           <div className="flex items-center justify-center order-1  md:block">
-            <Image
+            {/* <Image
               className="rounded-xl w-full grayscale-100 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto"
               src="/aws-scd.jpeg"
               width={450}
@@ -52,6 +52,15 @@ function Rsvp() {
               loading="lazy"
               decoding="async"
               alt="AWS Student Community Day"
+            /> */}
+                        <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14131.701559942332!2d85.27633243675179!3d27.68870078269716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198d9284b605%3A0xdeff9faa80d88afb!2sAdvanced%20College%20of%20Engg.%20Management!5e0!3m2!1sen!2snp!4v1766767482385!5m2!1sen!2snp"
+              width="500"
+              height="450"
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="col-span-1 sm:col-span-2 w-full h-[300px] sm:h-[400px] md:h-[450px]"
             />
           </div>
 
@@ -106,18 +115,15 @@ function Rsvp() {
                     RSVP Now!
                   </Link>
                 </Button>
-                <Button
+                {/* <Button
                   size="lg"
-                  className="text-white w-full sm:w-auto text-sm sm:text-base"
+                  className="text-white hidden w-full sm:w-auto text-sm sm:text-base"
                   asChild
                 >
-                  <Link
-                    target="_blank"
-                    href="/schedule"
-                  >
-                   Itinerary
+                  <Link target="_blank" href="/schedule">
+                    Itinerary
                   </Link>
-                </Button>
+                </Button> */}
                 <Button
                   size="lg"
                   className="text-white w-full sm:w-auto text-sm sm:text-base"
@@ -131,21 +137,21 @@ function Rsvp() {
                     Google Maps
                   </Link>
                 </Button>
+              </div>
                 <Button
                   size="lg"
-                  className="text-white w-full sm:w-auto text-sm sm:text-base"
+                  className="text-white w-full max-w-75 bg-orange-500 sm:w-auto text-sm sm:text-base"
                   onClick={() => setIsTicketModalOpen(true)}
                 >
                   <Ticket className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                   My Ticket
                 </Button>
-              </div>
             </div>
           </div>
         </div>
         {/* <SponserUs/> */}
-         <Schedule /> 
-        <SpeakerSection/>
+        <Schedule />
+        <SpeakerSection />
       </div>
 
       {/* Ticket Modal */}

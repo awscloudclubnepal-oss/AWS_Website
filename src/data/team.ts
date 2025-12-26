@@ -107,16 +107,6 @@ export const teamMembers: TeamMember[] = [
       linkedin: "http://www.linkedin.com/in/bishnu-thapa",
     },
   },
-  {
-    id: 10,
-    name: "Mohit Bhandari",
-    designation: "Outreach/Branding Lead",
-    teamTag: "core team",
-    image: "/teams/mohit.png",
-    social: {
-      linkedin: "https://www.linkedin.com/in/mohitbhandari7/",
-    },
-  },
   //   {
   //     id: 11,
   //     name: "Pankaj Poudel",
