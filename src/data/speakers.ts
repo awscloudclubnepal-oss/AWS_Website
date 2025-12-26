@@ -101,76 +101,97 @@ export const SpeakerCardData: IspeakerCard[] = [
   },
   {
     id: "15",
+    coverImage: "/speakers/Samikshaya Khadka 1.jpg",
+    name: "Samikshya Khadka",
+    occupation: "Co-founder, Sano Engineer",
+    Linkedin:"https://www.linkedin.com/in/samikshya-khadka-6ba2b6200/"
+  },
+  {
+    id: "16",
+    coverImage: "/speakers/Aditya 1.jpg",
+    name: "Aaditya Pangeni",
+    occupation: "Infrastructure Engineer, STARTsmall Pvt. Ltd.",
+    Linkedin:"https://www.linkedin.com/in/aaditya-pageni-23366835a/"
+  },
+  {
+    id: "17",
+    coverImage: "/speakers/rajendra 1.jpg",
+    name: "Rajendra Acharya",
+    occupation: "Infrastructure Engineer, STARTsmall Pvt. Ltd.",
+    Linkedin:"https://www.linkedin.com/in/rajendraacharya/"
+  },
+  {
+    id: "18",
     coverImage: "/speakers/Nischal.png",
     name: "Nischal Shakya",
     occupation: "Software Engineer, Qsystems AI",
     Linkedin:"https://www.linkedin.com/in/nischalshakya2015/"
   },
   {
-    id: "16",
+    id: "19",
     coverImage: "/speakers/Devi Bhattrai.png",
     name: "Devi Bhattrai",
     occupation: "Leader, AWS UG Women in Tech",
     Linkedin:"https://www.linkedin.com/in/devibhattaraii/"
   },
   {
-    id: "17",
+    id: "20",
     coverImage: "/speakers/Upendra 1.png",
     name: "Upendra Prasad Neupane",
     occupation: "Founder, AWS Cloud Club at TU",
     Linkedin:"https://www.linkedin.com/in/upendrapn/"
   },
   {
-    id: "18",
+    id: "21",
     coverImage: "/speakers/Thakur Paudel.png",
     name: "Thakur Paudel",
     occupation: "Embedded and Electrical Lead at Yatri Motors",
     Linkedin:"https://www.linkedin.com/in/thakurpaudel/"
   },
   {
-    id: "19",
+    id: "22",
     coverImage: "/speakers/keynote (3).png",
     name: "Sambit Bhattarai",
     occupation: "Founder and CEO, RevKeter",
     Linkedin:"https://www.linkedin.com/in/sambitbhattarai/"
   },
   {
-    id: "20",
+    id: "23",
     coverImage: "/speakers/keynote.png",
     name: "Lisa Bagley",
     occupation: "AWS Cloud Program Lead",
     Linkedin:"https://www.linkedin.com/in/lisa-bagley-cpacc-0b16b47/"
   },
   {
-    id: "21",
+    id: "24",
     coverImage: "/speakers/keynote (4).png",
     name: "Raj Sangroula",
     occupation: "CEO, Qsystems AI",
     Linkedin:"https://www.linkedin.com/in/raj-sangroula/"
   },
   {
-    id: "22",
+    id: "25",
     coverImage: "/speakers/keynote (6).png",
     name: "Upendra Prasad Neupane",
     occupation: "Founder, AWS Cloud Club at TU | AWS Community Builder",
     Linkedin:"https://www.linkedin.com/in/upendrapn/"
   },
   {
-    id: "23",
+    id: "26",
     coverImage: "/speakers/Tracy.png",
     name: "Tracy Wang",
     occupation: "AWS Cloud Club Community Manager",
     Linkedin:""
   },
   {
-    id: "24",
+    id: "27",
     coverImage: "/speakers/keynote (2).png",
     name: "Anjani Phuyal",
     occupation: "CEO, Genese Solutions",
     Linkedin:"https://www.linkedin.com/in/anjaniphuyal/"
   },
   {
-    id: "25",
+    id: "28",
     coverImage: "/speakers/keynote (5).png",
     name: "Prof. Dr. Subarna Shakya",
     occupation: "Director, IT innovation Center TU",
