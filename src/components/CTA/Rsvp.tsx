@@ -1,14 +1,18 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { Map, CalendarDays, MapPinned } from "lucide-react";
+import { Map, CalendarDays, MapPinned, Ticket } from "lucide-react";
 import CountdownTimer from "../CountDown/CDComponent";
 import SponserUs from "../CountDown/SponserUsComponent";
 import SpeakerSection from "../CountDown/Speakers";
 import Schedule from "@/components/Schedule/Schedule";
+import TicketModal from "./TicketModal";
 
 function Rsvp() {
+  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
   return (
     <div
       id="scd"
@@ -89,7 +93,7 @@ function Rsvp() {
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 <Button
                   size="lg"
                   className="text-white w-full sm:w-auto text-sm sm:text-base"
@@ -124,8 +128,16 @@ function Rsvp() {
                     href="https://maps.app.goo.gl/QVQ5cZpybMoa6u4U6"
                   >
                     <Map className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    Open in Google Maps
+                    Google Maps
                   </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  className="text-white w-full sm:w-auto text-sm sm:text-base"
+                  onClick={() => setIsTicketModalOpen(true)}
+                >
+                  <Ticket className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                  My Ticket
                 </Button>
               </div>
             </div>
@@ -135,6 +147,12 @@ function Rsvp() {
          <Schedule /> 
         <SpeakerSection/>
       </div>
+
+      {/* Ticket Modal */}
+      <TicketModal
+        isOpen={isTicketModalOpen}
+        onClose={() => setIsTicketModalOpen(false)}
+      />
     </div>
   );
 }
