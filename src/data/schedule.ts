@@ -158,7 +158,7 @@ export const events = [
 	},
 	{
 		id: 19,
-		title: "Momo-Approved? Serverless Content Moderation",
+		title: "Momo-Approved: Serverless Content Moderation with Amazon Rekognition",
 		speaker: "Subham and Risikhesh",
 		startTime: "14:45",
 		endTime: "15:05",
