@@ -12,6 +12,16 @@ export const teamMembers: TeamMember[] = [
       github: "https://github.com",
     },
   },
+  {
+    id: 10,
+    name: "Mohit Bhandari",
+    designation: "Outreach/Branding Lead",
+    teamTag: "core team",
+    image: "/teams/mohit.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/mohitbhandari7/",
+    },
+  },
   // Core Team
   //   {
   //     id: 2,

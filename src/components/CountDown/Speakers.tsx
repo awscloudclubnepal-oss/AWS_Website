@@ -5,10 +5,12 @@ import { SpeakerCardData } from "@/data/speakers";
 import { IspeakerCard } from "@/interface/ISpeakers";
 
 const total_speakers = SpeakerCardData.length
-const normal_speakers_data = SpeakerCardData.slice(0, 13);
-const panel_speaker_data = SpeakerCardData.slice(13, 18);
-const keynote_speaker_data = SpeakerCardData.slice(18, total_speakers - 1);
-const chief_guest = SpeakerCardData[total_speakers - 1];
+const normal_speakers_data = SpeakerCardData.filter((speaker)=> speaker.type.includes("normal"))
+const panel_speaker_data = SpeakerCardData.filter((speaker)=> speaker.type.includes("panel"))
+
+const keynote_speaker_data = SpeakerCardData.filter((speaker)=> speaker.type.includes("keynote"));
+const chief_guest = SpeakerCardData.filter((speaker)=> speaker.type.includes("chief"))[0];
+
 
 function SpeakerCard({ id, coverImage, name, occupation, Linkedin }: IspeakerCard) {
   return (
@@ -51,6 +53,7 @@ function SpeakerSection() {
               name={chief_guest.name}
               occupation={chief_guest.occupation}
               Linkedin={chief_guest.Linkedin}
+              type={chief_guest.type}
             />
           }
         </div>
@@ -68,6 +71,7 @@ function SpeakerSection() {
               name={person.name}
               occupation={person.occupation}
               Linkedin={person.Linkedin}
+              type={person.type}
             />
           ))}
         </div>
@@ -85,6 +89,7 @@ function SpeakerSection() {
               name={person.name}
               occupation={person.occupation}
               Linkedin={person.Linkedin}
+              type={person.type}
             />
           ))}
         </div>
@@ -102,6 +107,7 @@ function SpeakerSection() {
               name={person.name}
               occupation={person.occupation}
               Linkedin={person.Linkedin}
+              type={person.type}
             />
           ))}
         </div>

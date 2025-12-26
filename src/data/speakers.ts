@@ -6,28 +6,32 @@ export const SpeakerCardData: IspeakerCard[] = [
     coverImage: "/speakers/shubham 1.png",
     name: "Shubham Pokhrel",
     occupation: "Honorary Chair, AWS Cloud Club at TU | DevOps Engineer",
-    Linkedin:"https://www.linkedin.com/in/shubham-pokhrel/"
+    Linkedin:"https://www.linkedin.com/in/shubham-pokhrel/",
+     type: ["normal"] 
   },
   {
     id: "2",
     coverImage: "/speakers/Suraj 1.png",
     name: "Suraj Bhattrai",
     occupation: "AWS Certified Solutions Architect Associate",
-     Linkedin:"https://www.linkedin.com/in/immrbhattarai/"
+     Linkedin:"https://www.linkedin.com/in/immrbhattarai/",
+     type: ["normal"] 
   },
   {
     id: "3",
     coverImage: "/speakers/BinishaJoshi.png",
     name: "Binisha Joshi",
     occupation: " AWS Community Builder & Software Engineer",
-    Linkedin:"https://www.linkedin.com/in/binisha-joshi/"
+    Linkedin:"https://www.linkedin.com/in/binisha-joshi/",
+     type: ["normal"] 
   },
   {
     id: "4",
     coverImage: "/speakers/LajahShrestha.png",
     name: "Lajah Shrestha",
     occupation: "AWS Community Builder & Dev/Clops Engineer",
-    Linkedin:"https://www.linkedin.com/in/lajah-shrestha/ "
+    Linkedin:"https://www.linkedin.com/in/lajah-shrestha/ ",
+     type: ["normal"] 
   },
   {
     id: "5",
@@ -35,6 +39,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Akrur Neupane",
     occupation: "AWS Community Builder | Cloud Ops Engineer",
     Linkedin:"https://www.linkedin.com/in/neupaneakrur/"
+    , type: ["normal"]
   },
   {
     id: "6",
@@ -42,6 +47,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Apil Chaudhary",
     occupation: "AWS Certified Solutions Architect",
     Linkedin:"https://www.linkedin.com/in/apil-chaudhary/"
+    , type: ["normal"]
   },
   {
     id: "7",
@@ -49,6 +55,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Nirjal Bhurtel",
     occupation: "Embedded Software Architect",
     Linkedin:""
+    , type: ["normal"]
   },
   {
     id: "8",
@@ -56,6 +63,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Raju Mandal",
     occupation: "Senior Data and AI Engineer",
     Linkedin:"https://www.linkedin.com/in/raju-mandal/"
+    , type: ["normal"]
   },
   {
     id: "9",
@@ -63,6 +71,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Binod Adhikari",
     occupation: "Senior Software Engineer",
     Linkedin:"https://www.linkedin.com/in/er-binod-adhikari-81a6a977/ "
+    , type: ["normal"]
   },
   {
     id: "10",
@@ -70,6 +79,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Rishikesh Gautam",
     occupation: "AWS Community Builder",
     Linkedin:"https://www.linkedin.com/in/rishikeshgautam/"
+    , type: ["normal"]
   },
   {
     id: "11",
@@ -77,6 +87,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Shushovan Paudyal",
     occupation: "Cloud Consultant",
     Linkedin:"https://www.linkedin.com/in/sushovan-paudyal-941600203/"
+    , type: ["normal"]
   },
   {
     id: "12",
@@ -84,6 +95,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Aayush Pokharel",
     occupation: "Devops Engineer",
     Linkedin:"https://www.linkedin.com/in/aayushpokharel/"
+    , type: ["normal"]
   },
   {
     id: "13",
@@ -91,6 +103,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Raman Pokharel",
     occupation: "Game Developer",
     Linkedin:"https://www.linkedin.com/in/raman-pokhrel-3810242b6/"
+    , type: ["normal"]
   },
   {
     id: "14",
@@ -98,6 +111,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Abiral Sangroula",
     occupation: "Principal Engineer, Qsystems AI",
     Linkedin:"https://www.linkedin.com/in/abiral-sangroula-454a50186/"
+    , type: ["panel"]
   },
   {
     id: "15",
@@ -105,6 +119,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Samikshya Khadka",
     occupation: "Co-founder, Sano Engineer",
     Linkedin:"https://www.linkedin.com/in/samikshya-khadka-6ba2b6200/"
+    , type: ["normal"]
   },
   {
     id: "16",
@@ -112,6 +127,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Aaditya Pangeni",
     occupation: "Infrastructure Engineer, STARTsmall Pvt. Ltd.",
     Linkedin:"https://www.linkedin.com/in/aaditya-pageni-23366835a/"
+    , type: ["normal"]
   },
   {
     id: "17",
@@ -119,6 +135,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Rajendra Acharya",
     occupation: "Infrastructure Engineer, STARTsmall Pvt. Ltd.",
     Linkedin:"https://www.linkedin.com/in/rajendraacharya/"
+    , type: ["normal"]
   },
   {
     id: "18",
@@ -126,6 +143,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Nischal Shakya",
     occupation: "Software Engineer, Qsystems AI",
     Linkedin:"https://www.linkedin.com/in/nischalshakya2015/"
+    , type: ["panel", "normal"]
   },
   {
     id: "19",
@@ -133,6 +151,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Devi Bhattrai",
     occupation: "Leader, AWS UG Women in Tech",
     Linkedin:"https://www.linkedin.com/in/devibhattaraii/"
+    , type: ["panel"]
   },
   {
     id: "20",
@@ -140,6 +159,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Upendra Prasad Neupane",
     occupation: "Founder, AWS Cloud Club at TU",
     Linkedin:"https://www.linkedin.com/in/upendrapn/"
+    , type: ["panel"]
   },
   {
     id: "21",
@@ -147,13 +167,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Thakur Paudel",
     occupation: "Embedded and Electrical Lead at Yatri Motors",
     Linkedin:"https://www.linkedin.com/in/thakurpaudel/"
-  },
-  {
-    id: "22",
-    coverImage: "/speakers/keynote (3).png",
-    name: "Sambit Bhattarai",
-    occupation: "Founder and CEO, RevKeter",
-    Linkedin:"https://www.linkedin.com/in/sambitbhattarai/"
+    , type: ["panel"]
   },
   {
     id: "23",
@@ -161,20 +175,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Lisa Bagley",
     occupation: "AWS Cloud Program Lead",
     Linkedin:"https://www.linkedin.com/in/lisa-bagley-cpacc-0b16b47/"
-  },
-  {
-    id: "24",
-    coverImage: "/speakers/keynote (4).png",
-    name: "Raj Sangroula",
-    occupation: "CEO, Qsystems AI",
-    Linkedin:"https://www.linkedin.com/in/raj-sangroula/"
-  },
-  {
-    id: "25",
-    coverImage: "/speakers/keynote (6).png",
-    name: "Upendra Prasad Neupane",
-    occupation: "Founder, AWS Cloud Club at TU | AWS Community Builder",
-    Linkedin:"https://www.linkedin.com/in/upendrapn/"
+    , type: ["keynote"]
   },
   {
     id: "26",
@@ -182,6 +183,31 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Tracy Wang",
     occupation: "AWS Cloud Club Community Manager",
     Linkedin:""
+    , type: ["keynote"]
+  },
+  {
+    id: "22",
+    coverImage: "/speakers/keynote (3).png",
+    name: "Sambit Bhattarai",
+    occupation: "Founder and CEO, RevKeter",
+    Linkedin:"https://www.linkedin.com/in/sambitbhattarai/"
+    , type: ["keynote"]
+  },
+  {
+    id: "24",
+    coverImage: "/speakers/keynote (4).png",
+    name: "Raj Sangroula",
+    occupation: "CEO, Qsystems AI",
+    Linkedin:"https://www.linkedin.com/in/raj-sangroula/"
+    , type: ["keynote"]
+  },
+  {
+    id: "25",
+    coverImage: "/speakers/keynote (6).png",
+    name: "Upendra Prasad Neupane",
+    occupation: "Founder, AWS Cloud Club at TU | AWS Community Builder",
+    Linkedin:"https://www.linkedin.com/in/upendrapn/"
+    , type: ["keynote"]
   },
   {
     id: "27",
@@ -189,6 +215,7 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Anjani Phuyal",
     occupation: "CEO, Genese Solutions",
     Linkedin:"https://www.linkedin.com/in/anjaniphuyal/"
+    , type: ["keynote"]
   },
   {
     id: "28",
@@ -196,5 +223,6 @@ export const SpeakerCardData: IspeakerCard[] = [
     name: "Prof. Dr. Subarna Shakya",
     occupation: "Director, IT innovation Center TU",
     Linkedin:"https://www.linkedin.com/in/prof-dr-subarna-shakya-0b636b54/"
+    , type: ["chief"]
   },
 ];
