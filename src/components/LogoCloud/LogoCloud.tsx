@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SponsorCardProps } from "@/interface/ISponsers";
 import { sponsorcardprops } from "@/data/sponsers";
+import { communitycardprops } from "@/data/community";
 
 const title_data = sponsorcardprops.slice(0, 2);
 const second_level_data = sponsorcardprops.slice(2, 4);
@@ -79,6 +80,23 @@ const LogoClouds = () => {
             <div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 sm:gap-4">
                 {normal_partner_data.map((partner) => (
+                  <SponserCard
+                    key={partner.id}
+                    id={partner.id}
+                    title={partner.title}
+                    imageUrl={partner.imageUrl}
+                    src={partner.src}
+                    size={partner.size}
+                    font_size={partner.font_size}
+                    alttext={partner.alttext}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="m-8">
+              <h1 className="text-center font-bold text-xl sm:text-2xl md:text-3xl leading-tight">Community Partners</h1>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 sm:gap-4">
+                {communitycardprops.map((partner) => (
                   <SponserCard
                     key={partner.id}
                     id={partner.id}
