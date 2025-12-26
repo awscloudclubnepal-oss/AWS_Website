@@ -42,7 +42,7 @@ const Schedule = () => {
 		setSelectedEvent(null);
 	};
 	return (
-		<div className="p-4 sm:p-8 bg-background text-foreground">
+		<div className="w-full p-4 sm:p-8 bg-background text-foreground">
 			<div className="flex flex-col items-center sm:flex-row sm:justify-between mb-6">
 				<h1 className="text-3xl font-bold text-center">
 					Conference Schedule
@@ -113,13 +113,13 @@ const Schedule = () => {
 					{/* Grid Cells for visual background */}
 					{Array.from({ length: TOTAL_HOURS }).map((_, timeIdx) => (
 						<React.Fragment key={`row-bg-${timeIdx}`}>
-							<div className="h-96 bg-muted/50 border-r border-b border-border flex items-center justify-center font-semibold text-sm text-muted-foreground">
+							<div className="h-50 bg-muted/50 border-r border-b border-border flex items-center justify-center font-semibold text-sm text-muted-foreground">
 								{formatTimeRange(START_HOUR + timeIdx, START_HOUR + timeIdx + 1)}
 							</div>
 							{rooms.map((room) => (
 								<div
 									key={`cell-bg-${timeIdx}-${room}`}
-									className="h-96 border-r border-b border-border bg-accent relative"
+									className="h-50 border-r border-b border-border bg-accent relative"
 								>
 								</div>
 							))}
