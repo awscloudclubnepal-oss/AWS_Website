@@ -3,4 +3,5 @@ export interface IspeakerCard {
   coverImage:string;
   name:string;
   occupation:string;
+  Linkedin:string;
 }

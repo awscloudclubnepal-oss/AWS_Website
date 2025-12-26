@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { SpeakerCardData } from "@/data/speakers";
 import { IspeakerCard } from "@/interface/ISpeakers";
 
@@ -8,10 +9,11 @@ const panel_speaker_data = SpeakerCardData.slice(13, 18);
 const keynote_speaker_data = SpeakerCardData.slice(18, 24);
 const chief_guest = SpeakerCardData[24];
 
-function SpeakerCard({ id, coverImage, name, occupation }: IspeakerCard) {
+function SpeakerCard({ id, coverImage, name, occupation, Linkedin }: IspeakerCard) {
   return (
     <div className="flex flex-col justify-center items-center mb-2 ">
       <div className="relative w-full overflow-hidden aspect-4/5">
+        <Link href={Linkedin} rel="noopener noreferrer">
         <Image
           src={coverImage}
           alt={name}
@@ -19,8 +21,9 @@ function SpeakerCard({ id, coverImage, name, occupation }: IspeakerCard) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
         />
+        </Link>
       </div>
-      <div className="text-center text-xs sm:text-sm h-[100px] w-[142px] sm:h-[70px] sm:w-[110px] md:h-[50px] md:w-[130px] ">
+      <div className="text-center text-xs sm:text-sm h-[100px] w-[132px] sm:h-[70px] sm:w-[110px] md:h-[50px] md:w-[130px] ">
         <p className="font-semibold">{name}</p>
         <p className="text-sm text-muted-foreground">{occupation}</p>
       </div>
@@ -30,7 +33,7 @@ function SpeakerCard({ id, coverImage, name, occupation }: IspeakerCard) {
 
 function SpeakerSection() {
   return (
-    <div className="text-center">
+    <div className="text-center w-full p-2">
       <h1 className="mb-6 sm:mb-8 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight xl:leading-[1.125]">
         SPEAKER SECTION
       </h1>
@@ -46,6 +49,7 @@ function SpeakerSection() {
               coverImage={chief_guest.coverImage}
               name={chief_guest.name}
               occupation={chief_guest.occupation}
+              Linkedin ={chief_guest.Linkedin}
             />
           }
         </div>
@@ -62,6 +66,7 @@ function SpeakerSection() {
               coverImage={person.coverImage}
               name={person.name}
               occupation={person.occupation}
+              Linkedin ={person.Linkedin}
             />
           ))}
         </div>
@@ -78,6 +83,7 @@ function SpeakerSection() {
               coverImage={person.coverImage}
               name={person.name}
               occupation={person.occupation}
+               Linkedin ={person.Linkedin}
             />
           ))}
         </div>
@@ -94,6 +100,7 @@ function SpeakerSection() {
               coverImage={person.coverImage}
               name={person.name}
               occupation={person.occupation}
+               Linkedin ={person.Linkedin}
             />
           ))}
         </div>
