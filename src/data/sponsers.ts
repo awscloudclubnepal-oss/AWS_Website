@@ -5,7 +5,7 @@ export const sponsorcardprops: SponsorCardProps[] = [
     id: "partner-1",
     title: "title",
     imageUrl: "/TitleSponsor.png",
-    src: "https://studii.md/",
+    src: "https://studii.net/",
     size: 64,
     font_size: [], // title hidden
     alttext: "Title sponsor image here",
