@@ -140,7 +140,7 @@ function Rsvp() {
               </div>
                 <Button
                   size="lg"
-                  className="text-white w-full max-w-75 bg-orange-500 sm:w-auto text-sm sm:text-base"
+                  className="text-white w-full sm:max-w-75 bg-orange-500 sm:w-auto text-sm sm:text-base"
                   onClick={() => setIsTicketModalOpen(true)}
                 >
                   <Ticket className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
