@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
-export const TOTAL_HOURS = 8;
+export const TOTAL_HOURS = 9;
 export const START_HOUR = 8;
 
 export const formatTimeRange = (startHour: number, endHour: number) => {
