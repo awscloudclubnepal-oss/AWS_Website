@@ -1,9 +1,7 @@
 import ContactUs from "@/components/ContactUs/ContactUs";
 import CallToAction from "@/components/CTA/CTA";
-import Rsvp from "@/components/CTA/Rsvp";
 import FAQs from "@/components/FAQ/FAQ";
 import { HeroSection } from "@/components/Hero/Hero";
-import LogoClouds from "@/components/LogoCloud/LogoCloud";
 import PresidentReview from "@/components/Review/President";
 import dynamic from "next/dynamic";
 
@@ -31,8 +29,6 @@ function Page() {
       {/* Main content area */}
       <div className="w-full max-w-7xl relative">
         <HeroSection />
-        <Rsvp />
-        <LogoClouds />
         <EventsSection />
         <Team />
         <PresidentReview />

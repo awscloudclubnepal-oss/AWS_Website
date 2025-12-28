@@ -42,110 +42,60 @@ function Rsvp() {
       <div className=" w-full max-w-6xl flex flex-col gap-y-2 p-1 justify-center items-center ">
         {/* Grid Layout */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 md:p-8">
-          {/* Image Side */}
-          <div className="flex items-center justify-center order-1  md:block">
-            {/* <Image
-              className="rounded-xl w-full grayscale-100 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto"
-              src="/aws-scd.jpeg"
-              width={450}
-              height={450}
-              loading="lazy"
-              decoding="async"
-              alt="AWS Student Community Day"
-            /> */}
-                        <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14131.701559942332!2d85.27633243675179!3d27.68870078269716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198d9284b605%3A0xdeff9faa80d88afb!2sAdvanced%20College%20of%20Engg.%20Management!5e0!3m2!1sen!2snp!4v1766767482385!5m2!1sen!2snp"
-              width="500"
-              height="450"
-              allowFullScreen={true}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="col-span-1 sm:col-span-2 w-full h-[300px] sm:h-[400px] md:h-[450px]"
-            />
+          {/* Map Side */}
+          <div className="flex items-center justify-center order-1 md:block">
+            <div className="relative w-full overflow-hidden rounded-2xl border border-border/50 shadow-lg bg-gradient-to-br from-primary/5 to-transparent p-1">
+              <div className="rounded-xl overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14131.701559942332!2d85.27633243675179!3d27.68870078269716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198d9284b605%3A0xdeff9faa80d88afb!2sAdvanced%20College%20of%20Engg.%20Management!5e0!3m2!1sen!2snp!4v1766767482385!5m2!1sen!2snp"
+                  width="500"
+                  height="450"
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[450px]"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Text Content Side */}
           <div className="flex flex-col justify-between py-2 sm:py-4 px-2 sm:px-4 lg:px-0 order-1 lg:order-2">
             <div>
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm text-primary font-medium mb-2">
+                <MapPinned className="w-4 h-4" />
+                <span>Where It Took Place</span>
+              </div>
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 tracking-wide leading-snug">
-                AWS Student Community Day 2025
+                The Venue That Hosted It All
               </h2>
               <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
-                AWS Student Community Day 2025 is a student-led event featuring
-                hands-on workshops, expert talks, and networking opportunities.
-                Join fellow cloud enthusiasts to learn, build, and connect with
-                the AWS community.
+                AWS Student Community Day 2025 was held at Advanced College of Engineering, 
+                where hundreds of cloud enthusiasts gathered for a day of hands-on workshops, 
+                expert talks, and unforgettable networking moments.
               </p>
             </div>
 
-            {/* Countdown */}
-            <div className="flex items-start mb-6 sm:mb-8 w-full">
-              <CountdownTimer targetDate="2025-12-27T08:00:00" large />
-            </div>
 
             {/* Event Info */}
             <div className="flex flex-col gap-3 sm:gap-4">
+              <p className="text-xs text-muted-foreground">Event Details</p>
               <div className="flex flex-col gap-2 sm:gap-3">
                 <div className="flex items-center gap-2 text-xs sm:text-sm md:text-base">
                   <CalendarDays className="w-4 h-4 shrink-0" />
                   <span className="text-xs font-medium">
-                    Dec 27, 2025 | 8 A.M - 5 P.M
+                    Held on Dec 27, 2025 | 8 A.M - 5 P.M
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2 text-xs sm:text-sm md:text-base">
                   <MapPinned className="w-4 h-4 shrink-0" />
                   <span className="text-xs font-medium">
-                    Advanced College of Engineering
+                    Advanced College of Engineering, Kupondole
                   </span>
                 </div>
               </div>
 
-              {/* Buttons */}
-              <div className="flex flex-wrap gap-2 sm:gap-3">
-                <Button
-                  size="lg"
-                  className="text-white w-full sm:w-auto text-sm sm:text-base"
-                  asChild
-                >
-                  <Link
-                    target="_blank"
-                    href="https://www.meetup.com/aws-cloud-club-at-tribhuvan-university/events/310674609/"
-                  >
-                    RSVP Now!
-                  </Link>
-                </Button>
-                {/* <Button
-                  size="lg"
-                  className="text-white hidden w-full sm:w-auto text-sm sm:text-base"
-                  asChild
-                >
-                  <Link target="_blank" href="/schedule">
-                    Itinerary
-                  </Link>
-                </Button> */}
-                <Button
-                  size="lg"
-                  className="text-white w-full sm:w-auto text-sm sm:text-base"
-                  asChild
-                >
-                  <Link
-                    target="_blank"
-                    href="https://maps.app.goo.gl/QVQ5cZpybMoa6u4U6"
-                  >
-                    <Map className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    Google Maps
-                  </Link>
-                </Button>
-              </div>
-                <Button
-                  size="lg"
-                  className="text-white w-full sm:max-w-75 bg-orange-500 sm:w-auto text-sm sm:text-base"
-                  onClick={() => setIsTicketModalOpen(true)}
-                >
-                  <Ticket className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                  My Ticket
-                </Button>
             </div>
           </div>
         </div>

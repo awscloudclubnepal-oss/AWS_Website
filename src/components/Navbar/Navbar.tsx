@@ -12,6 +12,7 @@ const menuItems = [
   { name: "Teams", href: "#teams" },
   { name: "Gallery", href: "#gallery" },
   { name: "FAQ", href: "#faq" },
+    { name: "AWS SCD Nepal 2025", href: "/scd-2025" },
 ];
 
 export const Navbar = () => {
