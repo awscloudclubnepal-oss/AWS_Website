@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { Mic2 } from "lucide-react";
 import { SpeakerCardData } from "@/data/speakers";
 import { IspeakerCard } from "@/interface/ISpeakers";
 
@@ -37,12 +38,17 @@ function SpeakerCard({ id, coverImage, name, occupation, Linkedin }: IspeakerCar
 function SpeakerSection() {
   return (
     <div className="text-center w-full p-2 sm:p-4">
+      <div className="inline-flex items-center gap-2 text-sm sm:text-base text-primary font-medium mb-3">
+        <Mic2 className="w-4 h-4" />
+        <span>The Voices That Inspired Us</span>
+      </div>
       <h1 className="mb-8 sm:mb-10 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight xl:leading-[1.125]">
-        SPEAKER SECTION
+        OUR SPEAKERS
       </h1>
       <div className="mb-12 sm:mb-16">
+        <p className="text-sm text-muted-foreground mb-2">Guest of Honor</p>
         <h2 className="mb-4 sm:mb-6 text-2xl sm:text-4xl md:text-5xl font-bold leading-tight xl:leading-[1.111]">
-          Chief Guest
+          Our Chief Guest
         </h2>
         <div className="flex items-center justify-center max-w-[300px] mx-auto">
           {
@@ -59,6 +65,7 @@ function SpeakerSection() {
         </div>
       </div>
       <div className="mb-12 sm:mb-16">
+        <p className="text-sm text-muted-foreground mb-2">Featured Talks</p>
         <h2 className="mb-4 sm:mb-6 text-2xl sm:text-4xl md:text-5xl font-bold leading-tight xl:leading-[1.111]">
           Keynote Speakers
         </h2>
@@ -77,6 +84,7 @@ function SpeakerSection() {
         </div>
       </div>
       <div className="mb-12 sm:mb-16">
+        <p className="text-sm text-muted-foreground mb-2">Expert Insights</p>
         <h2 className="mb-4 sm:mb-6 text-2xl sm:text-4xl md:text-5xl font-bold leading-tight xl:leading-[1.111]">
           Panel Discussion
         </h2>
@@ -95,8 +103,9 @@ function SpeakerSection() {
         </div>
       </div>
       <div className="mb-12 sm:mb-16">
+        <p className="text-sm text-muted-foreground mb-2">Session Speakers</p>
         <h2 className="mb-4 sm:mb-6 text-2xl sm:text-4xl md:text-5xl font-bold leading-tight xl:leading-[1.111]">
-          Speakers
+          Workshop & Talk Speakers
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
           {normal_speakers_data.map((person) => (

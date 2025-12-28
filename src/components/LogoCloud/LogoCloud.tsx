@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Handshake } from "lucide-react";
 import { SponsorCardProps } from "@/interface/ISponsers";
 import { sponsorcardprops } from "@/data/sponsers";
 import { communitycardprops } from "@/data/community";
@@ -14,11 +15,15 @@ const LogoClouds = () => {
     <div className="py-10 flex items-center justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-xl space-y-4 sm:space-y-6 mx-auto">
+          <div className="inline-flex items-center gap-2 text-sm sm:text-base text-primary font-medium">
+            <Handshake className="w-4 h-4" />
+            <span>Those Who Made It Possible</span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Our Sponsors
+            Our Sponsors & Partners
           </h2>
-          <p className="text-sm sm:text-base">
-            Meet the supports who made AWS Student Community Day 2025 happen.
+          <p className="text-sm sm:text-base text-muted-foreground">
+            A heartfelt thank you to the sponsors and partners who made AWS Student Community Day 2025 a grand success.
           </p>
         </div>
         <div className="w-auto text-center mt-8 sm:mt-10">

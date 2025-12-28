@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Calendar } from "lucide-react";
 import { events } from "@/data/schedule";
 import { TOTAL_HOURS, START_HOUR, formatTimeRange } from "@/lib/utils";
 import ThemeToggle from "../Theme/ThemeSwitch";
@@ -43,10 +44,14 @@ const Schedule = () => {
 	};
 	return (
 		<div className="w-full p-4 sm:p-8 bg-background text-foreground">
-			<div className="flex flex-col items-center sm:flex-row sm:justify-between mb-6">
-				<h1 className="text-3xl font-bold text-center">
-					Conference Schedule
-				</h1>
+      <div className="flex flex-col items-center sm:flex-row sm:justify-between mb-6">
+				<div className="text-center sm:text-left">
+					<div className="inline-flex items-center gap-2 text-xs sm:text-sm text-primary font-medium mb-1">
+						<Calendar className="w-4 h-4" />
+						<span>How The Day Unfolded</span>
+					</div>
+					<h1 className="text-3xl font-bold">Event Schedule</h1>
+				</div>
 				<div className="mt-2 sm:mt-0">
 					<ThemeToggle />
 				</div>

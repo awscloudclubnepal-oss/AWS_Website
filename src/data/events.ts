@@ -12,7 +12,7 @@ export const events: EventItem[] = [
     locationUrl: 'https://www.meetup.com/aws-cloud-club-at-tribhuvan-university/events/310674609/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link&utm_version=v2',
     coverImage: '/aws-scd-old.png',
     tags: ['Meetup'],
-    status: 'upcoming'
+    status: 'past'
   },
   {
     id: 'intro-to-aws-cloud-essentials',
